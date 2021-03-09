@@ -21,7 +21,7 @@ int main(void) {
 
 	printList(list);
 	printListLength(list);
-	// listFree(list);
+	releasedList(list);
 		
 	return 0;
 }

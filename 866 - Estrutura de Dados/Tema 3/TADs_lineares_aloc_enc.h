@@ -44,4 +44,4 @@ int listLength(List *list);
 void printListLength(List *list);
 
 // free memory allocated by the list
-// void listFree(List *list);
+void releasedList(List *list);
