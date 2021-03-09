@@ -1,0 +1,8 @@
+# Ignora arquivos executável
+*.exe
+*.sh
+
+# Arquivo Win (Gerado pelo Dev-C++) 
+# este arquivo utiliza o caminho onde está instalado o compilador 
+# na sua maquina, onde cada um tem o seu caminho
+*.win
