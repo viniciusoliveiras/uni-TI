@@ -36,7 +36,7 @@ void printList(TypeList *list) {
   printf("\n\n");
 }
 
-int listLength(TypeList *list) {
+int listLength(List *list) {
   if (list == NULL) return 0;
 
   int count = 0;
@@ -47,10 +47,12 @@ int listLength(TypeList *list) {
     knot = knot->next;
   }
 
+  count -= 1; // because element -1 is also counted
+
   return count;
 }
 
-void printListLength(TypeList *list) {
+void printListLength(List *list) {
   int sizeList = listLength(list);
-  printf("Tamanho da Lista: %d\n", sizeList);
+  printf("Tamanho da Lista:\n%d\n", sizeList);
 }

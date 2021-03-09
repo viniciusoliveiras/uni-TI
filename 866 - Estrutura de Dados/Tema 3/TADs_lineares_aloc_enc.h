@@ -13,6 +13,7 @@ struct cell
   struct cell *next;
 };
 typedef struct cell TypeCell;
+typedef struct cell *List;
 
 typedef struct 
 {
@@ -37,7 +38,7 @@ void insertNumber(TypeList *list, TypeItem item);
 void printList(TypeList *list);
 
 // function to calculate the length of the list
-int listLength(TypeList *list);
+int listLength(List *list);
 
 // print the list size on the screen
-void printListLength(TypeList *list);
+void printListLength(List *list);
