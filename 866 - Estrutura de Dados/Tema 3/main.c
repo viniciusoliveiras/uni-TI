@@ -11,12 +11,16 @@ int main(void) {
 	printf("** INSIRA ELEMENTOS NA LISTA **\n\tpara encerrar insecao digite -1\n\n");
 	
 	TypeItem number;	
-	
-	printf("Insira o elemento: "); scanf("%d", &number.key);		
-	
-	if (number.key != -1) {
-		insertNumber(list, number);	
+	while (number.key != -1) {		
+		printf("Insira o elemento: "); scanf("%d", &number.key);		
+		
+		if (number.key != -1) {
+			insertNumber(list, number);
+		}
 	}
+
+	printList(list);
+	printListLength(list);
 		
 	return 0;
 }

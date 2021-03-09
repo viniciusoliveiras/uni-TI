@@ -7,11 +7,12 @@ typedef struct
   int key;
 }TypeItem;
 
-typedef struct cell
+struct cell
 {
   TypeItem item;
   struct cell *next;
-}TypeCell;
+};
+typedef struct cell TypeCell;
 
 typedef struct 
 {

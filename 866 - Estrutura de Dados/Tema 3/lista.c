@@ -27,15 +27,27 @@ void insertNumber(TypeList *list, TypeItem item) {
 void printList(TypeList *list) {
   TypeCell *aux = list->first->next;
 
+  printf("\nLista impressa: \n");
   while (aux != NULL) {
     printf("%d ", aux->item.key);
     aux = aux->next;
-  }
+  } 
+
+  printf("\n\n");
 }
 
 int listLength(TypeList *list) {
-  int sizeList = sizeof(list);
-  return sizeList;
+  if (list == NULL) return 0;
+
+  int count = 0;
+  TypeCell *knot = *list;
+  
+  while(knot != NULL) {
+    count += 1;
+    knot = knot->next;
+  }
+
+  return count;
 }
 
 void printListLength(TypeList *list) {
