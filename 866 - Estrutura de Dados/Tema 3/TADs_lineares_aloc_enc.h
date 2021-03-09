@@ -42,3 +42,6 @@ int listLength(List *list);
 
 // print the list size on the screen
 void printListLength(List *list);
+
+// free memory allocated by the list
+// void listFree(List *list);

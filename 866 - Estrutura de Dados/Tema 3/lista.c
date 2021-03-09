@@ -56,3 +56,17 @@ void printListLength(List *list) {
   int sizeList = listLength(list);
   printf("Tamanho da Lista:\n%d\n", sizeList);
 }
+
+// void listFree(List *list) {
+//   if (list != NULL) {
+//     TypeCell *knot;
+
+//     while((*list) != NULL) {
+//       knot = *list;
+//       *list = (*list)->next;
+//       free(knot);
+//     }
+
+//     free(list);
+//   }
+// }

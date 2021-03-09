@@ -21,6 +21,7 @@ int main(void) {
 
 	printList(list);
 	printListLength(list);
+	// listFree(list);
 		
 	return 0;
 }
