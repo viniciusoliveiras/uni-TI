@@ -23,36 +23,26 @@ int main(void)
         }
     }
 
-    while (item.chave != -1) {
-        printf("Insira o elemento da Pilha 2: "); scanf("%d", &item.chave);
+    printf("\n");
 
-        if (item.chave != -1) {
-            InserePilha(P2, item);
+    TipoItem item2;
+    while (item2.chave != -1) {
+        printf("Insira o elemento da Pilha 2: "); scanf("%d", &item2.chave);
+
+        if (item2.chave != -1) {
+            InserePilha(P2, item2);
         }
     }    
 
-    printf("%i\n", TestaPilhaVazia(pilha));
+    // printf("%i\n", TestaPilhaVazia(pilha));
 
-    ImprimePilha(pilha);
     printf("\n\n");
-
-    TipoItem e26;
-
-    RemovePilha(pilha, &e26);
-    printf("%i\n", e26.chave);
-
-    RemovePilha(pilha, &e26);
-    printf("%i\n", e26.chave);
-
-    RemovePilha(pilha, &e26);
-    printf("%i\n", e26.chave);
-
-    printf("%i\n\n", TestaPilhaVazia(pilha));
-
-    ImprimePilha(pilha);
+    ImprimePilha(P1);
     printf("\n\n");
+    ImprimePilha(P2);
 
-    //--------------------    
+    printf("\n\n%i\n", TestaPilhaVazia(P1));
+    printf("%i\n", TestaPilhaVazia(P2));
 
     return 0;
 }
