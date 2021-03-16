@@ -4,29 +4,32 @@
 
 int main(void)
 {
-    //--------------------
+    TipoPilha *P1 = (TipoPilha *)malloc(sizeof(TipoPilha));
+    CriaPilhaVazia(P1);
 
-    printf("---------\n");
-    printf("  Pilha\n");
-    printf("---------\n");
+	TipoPilha *P2 = (TipoPilha *)malloc(sizeof(TipoPilha));
+    CriaPilhaVazia(P2);
 
-	TipoPilha *pilha = (TipoPilha *)malloc(sizeof(TipoPilha));
+    printf("%i\n", TestaPilhaVazia(P1));
+    printf("%i\n", TestaPilhaVazia(P2));
+    printf("** INSIRA ELEMENTOS DAS PILHAS **\n\tpara encerrar insecao digite -1\n\n");
 
-    CriaPilhaVazia(pilha);
-    printf("%i\n", TestaPilhaVazia(pilha));
+    TipoItem item;
+    while (item.chave != -1) {
+        printf("Insira o elemento da Pilha 1: "); scanf("%d", &item.chave);
 
-    TipoItem e21, e22, e23, e24, e25;
-    e21.chave = 49;
-    e22.chave = 82;
-    e23.chave = 65;
-    e24.chave = 22;
-    e25.chave = 74;
+        if (item.chave != -1) {
+            InserePilha(P1, item);
+        }
+    }
 
-    InserePilha(pilha, e21);
-    InserePilha(pilha, e22);
-    InserePilha(pilha, e23);
-    InserePilha(pilha, e24);
-    InserePilha(pilha, e25);
+    while (item.chave != -1) {
+        printf("Insira o elemento da Pilha 2: "); scanf("%d", &item.chave);
+
+        if (item.chave != -1) {
+            InserePilha(P2, item);
+        }
+    }    
 
     printf("%i\n", TestaPilhaVazia(pilha));
 
