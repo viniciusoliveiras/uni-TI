@@ -39,5 +39,8 @@ void InserePilha(TipoPilha *pilha, TipoItem item);
 // remove um elemento do tipo TipoItem da pilha
 void RemovePilha(TipoPilha *pilha, TipoItem *item);
 
+// Copia os elementos da Pilha2 para Pilha1
+void CopiaValores(TipoPilha **pilha1, TipoPilha **pilha2);
+
 // imprime os elementos da pilha
 void ImprimePilha(TipoPilha *pilha);

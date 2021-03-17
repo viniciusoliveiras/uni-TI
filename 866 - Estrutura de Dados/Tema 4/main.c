@@ -10,8 +10,8 @@ int main(void)
 	TipoPilha *P2 = (TipoPilha *)malloc(sizeof(TipoPilha));
     CriaPilhaVazia(P2);
 
-    printf("%i\n", TestaPilhaVazia(P1));
-    printf("%i\n", TestaPilhaVazia(P2));
+    printf("Vazio P1: %i\n", TestaPilhaVazia(P1));
+    printf("Vazio P2: %i\n", TestaPilhaVazia(P2));
     printf("** INSIRA ELEMENTOS DAS PILHAS **\n\tpara encerrar insecao digite -1\n\n");
 
     TipoItem item;
@@ -26,23 +26,28 @@ int main(void)
     printf("\n");
 
     TipoItem item2;
+    int contador = 0;
     while (item2.chave != -1) {
         printf("Insira o elemento da Pilha 2: "); scanf("%d", &item2.chave);
 
         if (item2.chave != -1) {
             InserePilha(P2, item2);
+            contador += 1;
         }
     }    
 
-    // printf("%i\n", TestaPilhaVazia(pilha));
-
-    printf("\n\n");
+    printf("\nPilha 1: ");
     ImprimePilha(P1);
-    printf("\n\n");
+    printf("\nPilha 2: ");
     ImprimePilha(P2);
 
-    printf("\n\n%i\n", TestaPilhaVazia(P1));
-    printf("%i\n", TestaPilhaVazia(P2));
+    printf("\n\nVazio P1: %i\n", TestaPilhaVazia(P1));
+    printf("Vazio P2: %i\n", TestaPilhaVazia(P2));
+
+    CopiaValores(P1, P2);
+
+    printf("\nPilha2: ");
+    ImprimePilha(P2);
 
     return 0;
 }
