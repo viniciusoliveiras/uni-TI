@@ -9,7 +9,7 @@ typedef struct
 }TipoItem;
 
 // tipo exportado
-// define o TipoCelula que � o tipo das c�lulas que cont�m os elementos que s�o manipulados pelos TADs
+// define o TipoCelula que e o tipo das celulas que contem os elementos que sao manipulados pelos TADs
 typedef struct celula
 {
     TipoItem item;
@@ -30,7 +30,7 @@ typedef struct
 // cria uma pilha vazia
 void CriaPilhaVazia(TipoPilha *pilha);
 
-// testa se a pilha � vazia
+// testa se a pilha esta vazia
 int TestaPilhaVazia(TipoPilha *pilha);
 
 // insere um elemento do tipo TipoItem na pilha
@@ -38,6 +38,9 @@ void InserePilha(TipoPilha *pilha, TipoItem item);
 
 // remove um elemento do tipo TipoItem da pilha
 void RemovePilha(TipoPilha *pilha, TipoItem *item);
+
+// Copia os elementos da Pilha2 para Pilha1
+void CopiaValores(TipoPilha **pilha1, TipoPilha **pilha2);
 
 // imprime os elementos da pilha
 void ImprimePilha(TipoPilha *pilha);
