@@ -40,34 +40,18 @@ void RemovePilha(TipoPilha *pilha, TipoItem *item)
     free(q);
 }
 
-void CopiaValores(TipoPilha **topo, TipoPilha **topo2)
+void CopiaValores(TipoPilha *pilha1, TipoPilha *pilha2)
 {
-    TipoPilha *ptr;
-    TipoPilha *ptr2;
-    TipoPilha *aux; // Percorre a lista P2
-    CriaPilhaVazia(aux);
-
-    ptr = NULL;
-    ptr2 = NULL;
-
-    while(*topo2 != NULL)
+    TipoCelula *aux = pilha2->topo->proximo;
+    
+    while(aux != NULL)
     {
-        if (ptr == NULL)
-        {
-            ptr = *topo2; /* Copia primeiro valor do topo2 para ptr */
-            *topo2 = (*topo2)->topo->proximo; /* Desloca topo2 em 1 */
-            ptr->topo->proximo = NULL; /* Define NULL, pois se tornara o elemento mais recente da pilha */
-        }
-        else
-        {
-            ptr2 = *topo2;
-            *topo2 = (*topo2)->topo->proximo;
-            ptr2->topo->proximo = ptr;
-            ptr = ptr2;
-        }
-    }
+        pilha1->topo->item = pilha2->topo->item;
+        aux->proximo = pilha1->topo;
+        pilha1->topo = aux;
 
-    *topo2 = ptr;
+        aux = aux->proximo;
+    }
 }
 
 // imprime os elementos da pilha
