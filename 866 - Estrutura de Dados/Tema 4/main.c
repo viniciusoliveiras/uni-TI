@@ -48,6 +48,7 @@ int main(void)
     // printf("Vazio P2: %i\n", TestaPilhaVazia(P2));
 
     CopiaValores(P1, P2);
+    printf("Pilha2 para Pilha1\n");
 
     printf("\nPilha1: ");
     ImprimePilha(P1);

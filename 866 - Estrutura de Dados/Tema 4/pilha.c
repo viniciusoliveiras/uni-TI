@@ -46,10 +46,7 @@ void CopiaValores(TipoPilha *pilha1, TipoPilha *pilha2)
     
     while(aux != NULL)
     {
-        pilha1->topo->item = pilha2->topo->item;
-        aux->proximo = pilha1->topo;
-        pilha1->topo = aux;
-
+        InserePilha(pilha1, aux->item);
         aux = aux->proximo;
     }
 }
