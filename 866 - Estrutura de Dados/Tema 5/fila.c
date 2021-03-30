@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "TADs_lineares_aloc_enc.h"
 
-//TAD fila com alocação encadeada
+//TAD fila com alocaï¿½ï¿½o encadeada
 //cria uma fila vazia
 void CriaFilaVazia(TipoFila *fila)
 {
@@ -11,7 +11,7 @@ void CriaFilaVazia(TipoFila *fila)
     fila->frente->proximo = NULL;
 }
 
-//testa se a fila é vazia
+//testa se a fila ï¿½ vazia
 int TestaFilaVazia(TipoFila *fila)
 {
     return (fila->frente == fila->tras);
@@ -47,6 +47,17 @@ void ImprimeFila(TipoFila *fila)
     while (aux != NULL)
     {
         printf("%i ", aux->item.chave);
+        aux = aux->proximo;
+    }
+}
+
+void CopiaValoresFila(TipoFila *filaOriginal, TipoFila *filaCopia)
+{
+    TipoCelula *aux = filaOriginal->frente->proximo;
+    
+    while(aux != NULL)
+    {
+        InsereFila(filaCopia, aux->item);
         aux = aux->proximo;
     }
 }

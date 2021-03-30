@@ -9,43 +9,31 @@ int main(void)
     printf("--------\n");
 
     TipoFila *fila = (TipoFila *)malloc(sizeof(TipoFila));
-
     CriaFilaVazia(fila);
-    printf("%i\n", TestaFilaVazia(fila));
 
-    TipoItem e31, e32, e33, e34, e35;
-    e31.chave = 21;
-    e32.chave = 37;
-    e33.chave = 95;
-    e34.chave = 63;
-    e35.chave = 72;
+    TipoItem item;
+    const int encerra_insercao = -1;
+    while (item.chave != encerra_insercao) {
+        printf("Insira o elemento da fila: "); scanf("%d", &item.chave);
 
-    InsereFila(fila, e31);
-    InsereFila(fila, e32);
-    InsereFila(fila, e33);
-    InsereFila(fila, e34);
-    InsereFila(fila, e35);
+        if (item.chave != encerra_insercao) {
+            InsereFila(fila, item);
+        }
+    }
 
-    printf("%i\n", TestaFilaVazia(fila));
-
+    printf("\nFila Digitada: ");
     ImprimeFila(fila);
     printf("\n\n");
 
-    TipoItem e36;
+    TipoFila *copiaFila = (TipoFila *)malloc(sizeof(TipoFila));
+    CriaFilaVazia(copiaFila);    
 
-    RemoveFila(fila, &e36);
-    printf("%i\n", e36.chave);
-
-    RemoveFila(fila, &e36);
-    printf("%i\n", e36.chave);
-
-    RemoveFila(fila, &e36);
-    printf("%i\n", e36.chave);
-
-    printf("%i\n\n", TestaFilaVazia(fila));
-
+    CopiaValoresFila(fila, copiaFila);
+    
+    printf("Fila Original: ");
     ImprimeFila(fila);
-    printf("\n\n");
+    printf("\nFila Copia: ");
+    ImprimeFila(copiaFila);
 
     return 0;
 }

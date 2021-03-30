@@ -41,3 +41,6 @@ void RemoveFila(TipoFila *fila, TipoItem *item);
 
 //imprime os elementos da fila
 void ImprimeFila(TipoFila *fila);
+
+//copia valores da fila digitada para uma nova
+void CopiaValoresFila(TipoFila *filaOriginal, TipoFila *filaCopia);
