@@ -2,6 +2,23 @@
 #include <stdlib.h>
 #include "TADs_lineares_aloc_enc.h"
 
+void ImprimePilhasTela(TipoPilha *P1, TipoPilha*P2)
+{
+    printf("\nPilha 1: ");
+    if(TestaPilhaVazia(P1))
+        printf("VAZIO");
+    else
+        ImprimePilha(P1);
+
+    printf("\nPilha 2: ");
+    if(TestaPilhaVazia(P2))
+        printf("VAZIO");
+    else
+        ImprimePilha(P2);        
+
+    printf("\n\n");
+}
+
 int main(void)
 {
     TipoPilha *P1 = (TipoPilha *)malloc(sizeof(TipoPilha));
@@ -34,22 +51,23 @@ int main(void)
             InserePilha(P2, item2);
             contador += 1;
         }
-    }    
+    }
 
-    printf("\nPilha 1: ");
-    ImprimePilha(P1);
-    printf("\nPilha 2: ");
-    ImprimePilha(P2);
+    printf("\nPilhas Originais\n");
+    ImprimePilhasTela(P1, P2);    
 
-    printf("\n\n");
+    // Se a pilha nao estiver vazia eu executo CopiaValores
+    if(!TestaPilhaVazia(P2)) {
+        CopiaValores(P1, P2);
 
-    CopiaValores(P1, P2);
-    printf("Pilha2 para Pilha1\n");
+        printf("\t\t** Pilha2 foi passada para Pilha1 **\n\nPilhas Pos Copia\n");
+        ImprimePilhasTela(P1, P2);
+    } else {
+        printf("\t\tPilha 2 esta vazia.\nA representacao das pilhas fica a mesma que a de cima");
+    }
 
-    printf("\nPilha1: ");
-    ImprimePilha(P1);
-    printf("\nPilha2: ");
-    ImprimePilha(P2);
+    free(P1);
+    free(P2);
 
     return 0;
 }
