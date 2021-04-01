@@ -40,15 +40,26 @@ void RemovePilha(TipoPilha *pilha, TipoItem *item)
     free(q);
 }
 
+// copia valores de uma pilha2 para pilha1
 void CopiaValores(TipoPilha *pilha1, TipoPilha *pilha2)
 {
+    TipoPilha *pilhaAux = (TipoPilha *)malloc(sizeof(TipoPilha));
+    CriaPilhaVazia(pilhaAux);
     TipoCelula *aux = pilha2->topo->proximo;
     
     while(aux != NULL)
     {
-        InserePilha(pilha1, aux->item);
+        InserePilha(pilhaAux, aux->item);
         aux = aux->proximo;
     }
+    free(aux);
+    
+    while(pilhaAux->topo->proximo != NULL)
+    {
+        pilhaAux->topo = pilhaAux->topo->proximo;
+        InserePilha(pilha1, pilhaAux->topo->item);
+    }
+    free(pilhaAux);
 }
 
 // imprime os elementos da pilha
