@@ -4,9 +4,9 @@
 
 int main(void)
 {
-    printf("--------\n");
-    printf("  Fila\n");
-    printf("--------\n");
+    printf("------------------------------------------------------\n");
+    printf("\t\t\tFila\n\tpara encerrar insercao digite -1\n");
+    printf("------------------------------------------------------\n\n");
 
     TipoFila *fila = (TipoFila *)malloc(sizeof(TipoFila));
     CriaFilaVazia(fila);
@@ -21,19 +21,32 @@ int main(void)
         }
     }
 
-    printf("\nFila Digitada: ");
-    ImprimeFila(fila);
+    if(!TestaFilaVazia(fila)) {
+        printf("\nFila Digitada: ");
+        ImprimeFila(fila);
+    } else {
+        printf("\nFila Digitada: VAZIO");
+    }
+
     printf("\n\n");
 
-    TipoFila *copiaFila = (TipoFila *)malloc(sizeof(TipoFila));
-    CriaFilaVazia(copiaFila);    
+    if(!TestaFilaVazia(fila)) {
+        TipoFila *copiaFila = (TipoFila *)malloc(sizeof(TipoFila));
+        CriaFilaVazia(copiaFila);    
 
-    CopiaValoresFila(fila, copiaFila);
-    
-    printf("Fila Original: ");
-    ImprimeFila(fila);
-    printf("\nFila Copia: ");
-    ImprimeFila(copiaFila);
+        CopiaValoresFila(fila, copiaFila);
+        
+        printf("\tFoi criado uma copia da fila\n\nFila Original: ");
+        ImprimeFila(fila);
+        printf("\nFila Copia: ");
+        ImprimeFila(copiaFila);
+
+        free(copiaFila);
+    } else {
+        printf("A Fila esta vazia! Nao e possivel realizar uma copia dela.");
+    }
+
+    free(fila);
 
     return 0;
 }
