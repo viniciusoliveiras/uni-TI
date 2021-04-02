@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include "TADs_lineares_aloc_enc.h"
 
+/*
+            COOP-ALUNOS
+  Mateus Santos de Azevedo - 2020100086
+  Rhuan Gonzaga Cunha Francisco - 2020100052
+  Victor A. Santos Dionizio - 2020101250
+  Vinicius Silva de Oliveira - 2020101398
+  Bruno Sanches - 2015102356
+*/
+
 int main(void)
 {
     printf("------------------------------------------------------\n");

@@ -7,7 +7,7 @@
   Mateus Santos de Azevedo - 2020100086
   Rhuan Gonzaga Cunha Francisco - 2020100052
   Victor A. Santos Dionizio - 2020101250
-  Vinícius Silva de Oliveira - 2020101398
+  Vinicius Silva de Oliveira - 2020101398
   Bruno Sanches - 2015102356
 */
 
