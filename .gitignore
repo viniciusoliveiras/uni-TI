@@ -10,4 +10,7 @@
 # na sua maquina, onde cada um tem o seu caminho
 *.win
 
+# Arquivos de documentos e etc
 *.docx
+*.zip
+*.rar
