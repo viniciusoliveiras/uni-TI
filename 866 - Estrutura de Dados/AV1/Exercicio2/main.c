@@ -31,7 +31,7 @@ int main()
     printf("Insira: ");
     gets(elemento);
     
-    for (i = 0; i < (int)sizeof(elemento); i++)
+    for (i = 0; i < strlen(elemento); i++)
         elemento[i] = toupper(elemento[i]);
     
     TipoFila * fila = le_expressao(elemento);
