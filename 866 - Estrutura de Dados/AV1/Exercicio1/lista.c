@@ -48,7 +48,7 @@ void ImprimeLista(TipoLista *lista)
     TipoCelula *aux = lista->primeiro->proximo;
     while (aux != NULL)
     {
-        printf("%.f/%i  ", aux->item.coeficiente, aux->item.grau);
+        printf("%.2f/%i ", aux->item.coeficiente, aux->item.grau);
         aux = aux->proximo;
     }
 }
