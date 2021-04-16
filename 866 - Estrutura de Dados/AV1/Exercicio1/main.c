@@ -3,7 +3,7 @@
 #include "TAD_lista_aloc_enc.h"
 
 
-TipoLista * opera(TipoLista *p1, TipoLista *p2, int op);
+// TipoLista * opera(TipoLista *p1, TipoLista *p2, int op);
 
 int main(void)
 {
@@ -12,84 +12,77 @@ int main(void)
     TipoLista *resultado = (TipoLista *)malloc(sizeof(TipoLista));
     CriaListaVazia(polinomio1);
     CriaListaVazia(polinomio2);
-
-    float coeficiente;
-    int grau;
     TipoItem item;
     TipoItem item2;
 
+    float coeficiente;
+    int grau;
+
     // Insercao Lista ///
-    lista->ultimo->item = item;
-    polinomio1->ultimo->item.coeficiente;
-    polinomio1->ultimo->item.grau;
+     //   lista->ultimo->item = item;
+     //   polinomio1->ultimo->item.coeficiente == coeficiente;
+     //   polinomio1->ultimo->item.grau == grau;
     /*********************************/
 
+    printf("Polinomio1\n");
+    do{
+        printf("insira o coeficiente >> ");
+        scanf("%f", &item.coeficiente);
 
-    printf("insira o coeficiente >> ");
-    scanf("%f", &coeficiente);
+        if (item.coeficiente == 0)
+            break;
 
-
-    while (coeficiente != 0)
-    {
-        printf("\nInsira o grau novinha >> ");
-        scanf("%d", &grau);
-        item.coeficiente = coeficiente;
-        item.grau = grau;
-
-
+        printf("Insira o grau novinha >> ");
+        scanf("%d", &item.grau);
         InsereLista(polinomio1, item);
+    } while (1);
 
-        printf("\nInsira o coeficiente >> ");
-        scanf("%d", &coeficiente);
-        
-    }
-        ImprimeLista(polinomio1);
+    printf("\n\nPolinomio2\n");
+    do{
+        printf("insira o coeficiente >> ");
+        scanf("%f", &item2.coeficiente);
 
+        if (item2.coeficiente == 0)
+            break;
 
-
-    printf("insira o coeficiente >> ");
-    scanf("%f", &coeficiente);
-
-
-    while (coeficiente != 0)
-    {
-        printf("\nInsira o grau novinha >> ");
-        scanf("%d", &grau);
-        item.coeficiente = coeficiente;
-        item.grau = grau;
-
-
-        InsereLista(polinomio2, item);
-
-        printf("\nInsira o coeficiente >> ");
-        scanf("%d", &coeficiente);
-    }
-        ImprimeLista(polinomio2);   
+        printf("Insira o grau novinha >> ");
+        scanf("%d", &item2.grau);
+        InsereLista(polinomio2, item2);
+    } while (1);
+    
+    printf("Polinomio1: ");
+    ImprimeLista(polinomio1);
+    printf("\nPolinomio2: ");
+    ImprimeLista(polinomio2);   
 
         //SOMA
-        resultado = opera(polinomio1, polinomio2, 0);
-        ImprimeLista(resultado);
+        // resultado = opera(polinomio1, polinomio2, 0);
+        // ImprimeLista(resultado);
 
-        //SUBTRAÇÃO
-        resultado = opera(polinomio1, polinomio2, 1);
-        ImprimeLista(resultado);
+        // //SUBTRAÇÃO
+        // resultado = opera(polinomio1, polinomio2, 1);
+        // ImprimeLista(resultado);
 
     return 0;
 }
 
-TipoLista * opera(TipoLista *p1, TipoLista *p2, int op);
-{
-    TipoLista *resultado = (TipoLista *)malloc(sizeoff(TipoLista));
-    CriaListaVazia(resultado);
+// TipoLista *opera(TipoLista *p1, TipoLista *p2, int op);
+// {
+//     TipoLista *resultado = (TipoLista *)malloc(sizeoff(TipoLista));
+//     CriaListaVazia(resultado);
     
-     switch(opera)
+//      switch(op)
+//      {
+//         case '0':
+//             printf("%d" ,polinomio1 + polinomio2);
+//             break;
+
+//         case '1':
+//             printf("%d" ,polinomio1 - polinomio2);
+//             break;
+//      }
         
-        case '0'
-            Printf("%d" ,polinomio1 + polinomio2);
-
-        case '1'
-            Printf("%d" ,polinomio1 - polinomio2);
 
 
-    return resultado;
-}
+//     return resultado;
+// }
