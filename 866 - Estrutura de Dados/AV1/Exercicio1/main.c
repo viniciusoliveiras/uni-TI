@@ -2,8 +2,72 @@
 #include <stdlib.h>
 #include "TAD_lista_aloc_enc.h"
 
+
+TipoLista * opera(TipoLista *p1, TipoLista *p2, op);
+
 int main(void)
 {
+    TipoLista *polinomio1 = (TipoLista *)malloc(sizeoff(TipoLista));
+    TipoLista *polinomio2 = (TipoLista *)malloc(sizeoff(TipoLista));
+    TipoLista *resultado = (TipoLista *)malloc(sizeoff(TipoLista));
+
+    float coeficiente;
+    int grau;
+    TipoItem item;
+
+
+    CriaListaVazia(polinomio1);
+    printf("insira o coeficiente >> ");
+    scanf("%f", &coeficiente);
+
+
+    while (coeficiente != 0)
+    {
+        printf("\nInsira o grau novinha >> ");
+        scanf("%d", &grau);
+        item.coeficiente = coeficiente;
+        item.grau = grau;
+
+
+        InsereLista(polinomio1, item);
+
+        printf("\nInsira o coeficiente >> ");
+        scanf("%d", &coeficiente);
+        
+    }
+        ImprimeLista(polinomio1);
+
+
+     CriaListaVazia(polinomio2);
+    printf("insira o coeficiente >> ");
+    scanf("%f", &coeficiente);
+
+
+    while (coeficiente != 0)
+    {
+        printf("\nInsira o grau novinha >> ");
+        scanf("%d", &grau);
+        item.coeficiente = coeficiente;
+        item.grau = grau;
+
+
+        InsereLista(polinomio2, item);
+
+        printf("\nInsira o coeficiente >> ");
+        scanf("%d", &coeficiente);
+    }
+        ImprimeLista(polinomio2);   
+
+        //SOMA
+        resultado = opera(polinomio1, polinomio2, 0);
+        ImprimeLista(resultado);
+
+        //SUBTRAÇÃO
+        resultado = opera(polinomio1, polinomio2, 1);
+        ImprimeLista(resultado);
+
+    
+
     printf("---------\n");
     printf("  Lista\n");
     printf("---------\n");
@@ -55,4 +119,13 @@ int main(void)
     printf("\n\n");
 
     return 0;
+}
+
+TipoLista * opera(TipoLista *p1, TipoLista *p2, op);
+{
+    TipoLista *resultado = (TipoLista *)malloc(sizeoff(TipoLista));
+    CriaListaVazia(resultado);
+    
+
+    return resultado;
 }
