@@ -23,19 +23,30 @@ TipoFila * le_expressao(char *exp)
     return expressao;
 }
 
-int retornaResultado(int num1, int num2, char op)
+int retornaResultado(int num1, int num2, int op)
 {
+    int result;
     switch(op)
     {
         case '+':
-            return num1 + num2;
+            result = num1 + num2;
+            printf("Resultado: %d",result);
+            break;
         case '-':
-            return num1 - num2;
+            result = num1 - num2;
+            printf("Resultado: %d",result);
+            break;
         case '*':
-            return num1 * num2;
+            result = num1 * num2;
+            printf("Resultado: %d",result);
+            break;
         case '/':
-            return num1 / num2;
+            result = num1 / num2;
+            printf("Resultado: %d",result);
+            break;
     }
+
+    return result;
 }
 
 int avalia_expressao(TipoFila *exp)
@@ -43,7 +54,7 @@ int avalia_expressao(TipoFila *exp)
     TipoPilha * pilha = (TipoPilha *)malloc(sizeof(TipoPilha));
     // TipoCelula *aux_item = (TipoCelula *)malloc(sizeof(TipoCelula));
     TipoCelula *aux = exp->frente->proximo;
-    TipoItem *item;
+    TipoItem item;
     CriaPilhaVazia(pilha);
     int valor_digitado;
 
@@ -57,28 +68,27 @@ int avalia_expressao(TipoFila *exp)
             InserePilha(pilha, aux->item);
         } else {
             int algarismo1, algarismo2;
-            char operador = (char)valor_digitado;
+            int operador = aux->item.valor;
         	
-            // operador = item->valor = pilha->topo->item.valor;
-            // RemovePilha(pilha, item);
-            algarismo2 = item->valor = pilha->topo->item.valor;
-            RemovePilha(pilha, item);
-            algarismo1 = item->valor = pilha->topo->item.valor;
-            RemovePilha(pilha, item);
+            // ImprimePilha(pilha);
+            algarismo2 = item.valor = pilha->topo->item.valor;
+            // RemovePilha(pilha, item.valor);
+            // ImprimePilha(pilha);
+            algarismo1 = item.valor = pilha->topo->item.valor;
+            // RemovePilha(pilha, item.valor);
+            // ImprimePilha(pilha);
 
             int resultado;
-            resultado = retornaResultado(algarismo1, algarismo2, operador);            
-            item->valor = resultado;
-
-            InserePilha(pilha, *item);
-
-            // free(aux_item);
-            // printf("Operador");
+            resultado = retornaResultado(algarismo1, algarismo2, operador);
+            item.valor = resultado;
+            
+            // printf("resultado = %d", resultado);
+            InserePilha(pilha, item);
         }
         aux = aux->proximo;
     }
 
-    ImprimePilha(pilha);
+    //ImprimePilha(pilha);
 }
 
 int main()
@@ -94,6 +104,7 @@ int main()
     
     TipoFila * fila = le_expressao(elemento);
     ImprimeFila(fila);
+    printf("\n\n\n");
     avalia_expressao(fila);  
 
     return 0;

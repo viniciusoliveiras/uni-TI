@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "TAD_lista_aloc_enc.h"
 
-//TAD lista com alocação encadeada
+//TAD lista com alocaï¿½ï¿½o encadeada
 //cria uma lista vazia
 void CriaListaVazia(TipoLista *lista)
 {
@@ -11,7 +11,7 @@ void CriaListaVazia(TipoLista *lista)
     lista->primeiro->proximo = NULL;
 }
 
-//testa se a lista é vazia
+//testa se a lista ï¿½ vazia
 int TestaListaVazia(TipoLista *lista)
 {
     return (lista->primeiro == lista->ultimo);
@@ -31,7 +31,7 @@ void RemoveLista(TipoLista *lista, TipoItem *item, TipoCelula *pt)
 {
     if (TestaListaVazia(lista) || pt == NULL || pt->proximo == NULL)
     {
-        printf("Erro: lista vazia ou posição inexistente\n");
+        printf("Erro: lista vazia ou posiï¿½ï¿½o inexistente\n");
         return;
     }
     TipoCelula *q = pt->proximo;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "TADs_pilha_fila_aloc_enc.h"
 
-//TAD pilha com alocação encadeada
+//TAD pilha com alocaï¿½ï¿½o encadeada
 //cria uma pilha vazia
 void CriaPilhaVazia(TipoPilha *pilha)
 {
@@ -11,7 +11,7 @@ void CriaPilhaVazia(TipoPilha *pilha)
     pilha->topo->proximo = NULL;
 }
 
-//testa se a pilha é vazia
+//testa se a pilha ï¿½ vazia
 int TestaPilhaVazia(TipoPilha *pilha)
 {
     return (pilha->topo == pilha->fundo);
@@ -46,7 +46,7 @@ void ImprimePilha(TipoPilha *pilha)
     TipoCelula *aux = pilha->topo->proximo;
     while (aux != NULL)
     {
-        printf("%i ", aux->item.valor);
+        printf("%i ", &aux->item.valor);
         aux = aux->proximo;
     }
 }

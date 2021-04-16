@@ -1,7 +1,7 @@
-//TADs lineares (pilha e fila) com alocação encadeada (dinâmica)
+//TADs lineares (pilha e fila) com alocaï¿½ï¿½o encadeada (dinï¿½mica)
 
 //tipo exportado
-//define o TipoItem que é o tipo dos elementos dos TADs
+//define o TipoItem que ï¿½ o tipo dos elementos dos TADs
 typedef struct
 {
     int valor;
@@ -9,7 +9,7 @@ typedef struct
 }TipoItem;
 
 //tipo exportado
-//define o TipoCelula que é o tipo das células que contêm os elementos que são manipulados pelos TADs
+//define o TipoCelula que ï¿½ o tipo das cï¿½lulas que contï¿½m os elementos que sï¿½o manipulados pelos TADs
 typedef struct celula
 {
     TipoItem item;
@@ -19,18 +19,18 @@ typedef struct celula
 //-----TAD pilha-----
 
 //tipo exportado
-//define o TipoPilha que é o tipo do TAD pilha
+//define o TipoPilha que ï¿½ o tipo do TAD pilha
 typedef struct
 {
     TipoCelula *topo;
     TipoCelula *fundo;
 }TipoPilha;
-
-//funções exportadas
+    
+//funï¿½ï¿½es exportadas
 //cria uma pilha vazia
 void CriaPilhaVazia(TipoPilha *pilha);
 
-//testa se a pilha é vazia
+//testa se a pilha ï¿½ vazia
 int TestaPilhaVazia(TipoPilha *pilha);
 
 //insere um elemento do tipo TipoItem na pilha
@@ -45,18 +45,18 @@ void ImprimePilha(TipoPilha *pilha);
 //-----TAD fila-----
 
 //tipo exportado
-//define o TipoFila que é o tipo do TAD fila
+//define o TipoFila que ï¿½ o tipo do TAD fila
 typedef struct
 {
     TipoCelula *frente;
     TipoCelula *tras;
 }TipoFila;
 
-//funções exportadas
+//funï¿½ï¿½es exportadas
 //cria uma fila vazia
 void CriaFilaVazia(TipoFila *fila);
 
-//testa se a fila é vazia
+//testa se a fila ï¿½ vazia
 int TestaFilaVazia(TipoFila *fila);
 
 //insere um elemento do tipo TipoItem na fila
