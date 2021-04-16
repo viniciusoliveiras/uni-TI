@@ -19,7 +19,7 @@ TipoFila * le_expressao(char *exp)
         caracter.valor = exp[i];
         InsereFila(expressao, caracter);
     }
-
+ 
     return expressao;
 }
 
@@ -27,12 +27,15 @@ int main()
 {
     char elemento[30];
     int i;
+
+    printf("Insira: ");
     gets(elemento);
     
     for (i = 0; i < (int)sizeof(elemento); i++)
         elemento[i] = toupper(elemento[i]);
     
-    ImprimeFila(le_expressao(elemento));
+    TipoFila * fila = le_expressao(elemento);
+    ImprimeFila(fila);
 
-    printf("\n\nFora da Funcao:%s", elemento);
+    return 0;
 }
