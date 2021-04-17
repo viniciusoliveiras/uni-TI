@@ -12,40 +12,99 @@ TipoLista * opera(TipoLista *p1, TipoLista *p2, int op)
     TipoCelula *aux2 = p2->primeiro->proximo;
     TipoItem valor_operacao;
 
+    int tamanho_lista_1 = 0;
+    while (aux != NULL)
+    {
+        tamanho_lista_1 += 1;
+        aux = aux->proximo;
+    }
+    
+    aux = p1->primeiro->proximo;
+
     if (op == 0)
     {
+        int contador = 0, primeira = 0, testa_aux = 0;
         while (aux != NULL)
         {
             while (aux2 != NULL)
             {
                 // SOMA                
-                if(aux->item.grau == aux2->item.grau)
+                if (aux->item.grau == aux2->item.grau && primeira == 0)
                 {
                     valor_operacao.coeficiente = aux->item.coeficiente + aux2->item.coeficiente;
                     valor_operacao.grau = aux->item.grau;
                     InsereLista(resultado, valor_operacao);
+                } else if (aux->item.grau == aux2->item.grau && primeira == 1 && contador == 0) {
+                    valor_operacao.coeficiente += aux2->item.coeficiente;
+                    InsereLista(resultado, valor_operacao);
+                } else if (aux->item.grau == aux2->item.grau && contador == 1) {
+                    valor_operacao.coeficiente += aux->item.coeficiente;
+                    InsereLista(resultado, valor_operacao);
+                } else {
+                    InsereLista(resultado, aux2->item);
                 }
+
+                if (aux->item.grau != aux2->item.grau && testa_aux == 0)
+                {
+                    InsereLista(resultado, aux->item);
+                    testa_aux = 1;
+                }
+                // } else if (aux->item.grau == aux2->item.grau) {
+                //     valor_operacao.coeficiente += aux->item.coeficiente;
+                //     InsereLista(resultado, valor_operacao);
+                // }
+
+                printf("%.2fx^%d\n", valor_operacao.coeficiente, valor_operacao.grau);
+                primeira = 1;
                 aux2 = aux2->proximo;
             }
+            contador = 1;
+            testa_aux = 0;
             aux = aux->proximo;
+            aux2 = p2->primeiro->proximo;
         }
     }
     else if (op == 1)
     {
+        int contador = 0, primeira = 0, testa_aux = 0;
         while (aux != NULL)
         {
             while (aux2 != NULL)
             {
-                // SUBTRACAO
-                if(aux->item.grau == aux2->item.grau)
+                // SOMA                
+                if (aux->item.grau == aux2->item.grau && primeira == 0)
                 {
                     valor_operacao.coeficiente = aux->item.coeficiente - aux2->item.coeficiente;
                     valor_operacao.grau = aux->item.grau;
                     InsereLista(resultado, valor_operacao);
+                } else if (aux->item.grau == aux2->item.grau && primeira == 1 && contador == 0) {
+                    valor_operacao.coeficiente -= aux2->item.coeficiente;
+                    InsereLista(resultado, valor_operacao);
+                } else if (aux->item.grau == aux2->item.grau && contador == 1) {
+                    valor_operacao.coeficiente -= aux->item.coeficiente;
+                    InsereLista(resultado, valor_operacao);
+                } else {
+                    InsereLista(resultado, aux2->item);
                 }
+
+                if (aux->item.grau != aux2->item.grau && testa_aux == 0)
+                {
+                    InsereLista(resultado, aux->item);
+                    testa_aux = 1;
+                }
+                // } else if (aux->item.grau == aux2->item.grau) {
+                //     valor_operacao.coeficiente += aux->item.coeficiente;
+                //     InsereLista(resultado, valor_operacao);
+                // }
+
+                printf("%.2fx^%d\n", valor_operacao.coeficiente, valor_operacao.grau);
+                primeira = 1;
                 aux2 = aux2->proximo;
             }
+            contador = 1;
+            testa_aux = 0;
             aux = aux->proximo;
+            aux2 = p2->primeiro->proximo;
         }
     }
 
@@ -61,8 +120,6 @@ int main(void)
     // TipoLista *resultadoSub = (TipoLista *)malloc(sizeof(TipoLista));
     CriaListaVazia(polinomio1);
     CriaListaVazia(polinomio2);
-    // CriaListaVazia(resultadoSoma);
-    // CriaListaVazia(resultadoSub);
     TipoItem item;
     TipoItem item2;
 
@@ -107,12 +164,12 @@ int main(void)
     int soma = 0, subtracao = 1;
     printf("Soma: ");
     TipoLista *resultadoSoma = opera(polinomio1, polinomio2, soma);
-    ImprimeLista(resultadoSoma);
+    // ImprimeLista(resultadoSoma);
 
     // SUBTRAÇÃO
     printf("\n\nSubtracao: ");
     TipoLista *resultadoSub = opera(polinomio1, polinomio2, subtracao);
-    ImprimeLista(resultadoSub);
+    // ImprimeLista(resultadoSub);
 
     return 0;
 }
