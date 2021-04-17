@@ -1,0 +1,38 @@
+Polinomio1
+insira o coeficiente >> 2
+Insira o grau >> 2
+insira o coeficiente >> 5
+Insira o grau >> 2
+insira o coeficiente >> 6
+Insira o grau >> 2
+insira o coeficiente >> 0
+
+
+Polinomio2
+insira o coeficiente >> 4
+Insira o grau >> 2
+insira o coeficiente >> 3
+Insira o grau >> 2
+insira o coeficiente >> 0
+
+
+Deveria ter o resultado abaixo
+
+Soma: 6.00x^2
+9.00x^2
+14.00x^2
+19.00x^2
+25.00x^2
+31.00x^2
+
+
+Subtracao: -2.00x^2
+-5.00x^2
+-10.00x^2
+-15.00x^2
+-21.00x^2
+-27.00x^2
+
+--------------------------------
+Process exited after 14.37 seconds with return value 0
+Pressione qualquer tecla para continuar. . .
