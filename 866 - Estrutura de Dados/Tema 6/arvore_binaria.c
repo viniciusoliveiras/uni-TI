@@ -49,17 +49,26 @@ int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item)
 
 int AlturaDoNo(TipoArvore **arvore, TipoItem item)
 {
-    int grau;
+    int altura = 1;
     
     if ((*arvore)->item.chave == item.chave)
-        return 1;
-    else
     {
-        AlturaDoNo((*arvore)->esquerda, item) + 1;
-        AlturaDoNo((*arvore)->direita, item) + 1;
+        printf("\nreturn 3");
+        return 3;
     }
-
-    return grau;
+    else if(!TestaArvoreBinariaVazia((*arvore)->esquerda))
+    {
+        altura = AlturaDoNo((*arvore)->esquerda, item);
+    }
+    else if(!TestaArvoreBinariaVazia((*arvore)->direita))
+    {
+        altura = AlturaDoNo((*arvore)->direita, item);
+    }
+    
+    altura = altura - 1;
+    printf("\naltura: %d", altura);
+    // altura = altura + 2;
+    return altura;
 }
 
 //imprime os elementos da arvore binaria
