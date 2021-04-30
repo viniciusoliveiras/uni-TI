@@ -124,7 +124,7 @@ int main(void)
     // height(arvore_13);
 
     TipoItem noDesejado;
-    char testeNo = 'c';
+    char testeNo = 'f';
     noDesejado.chave = testeNo;
     printf("\n\nAltura do no %c eh: %d", testeNo, AlturaDoNo(arvore_13, noDesejado));
     

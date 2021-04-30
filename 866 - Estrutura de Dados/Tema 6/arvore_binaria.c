@@ -56,15 +56,17 @@ int AlturaDoNo(TipoArvore **arvore, TipoItem item)
         printf("\nreturn 3");
         return 3;
     }
-    else if(!TestaArvoreBinariaVazia((*arvore)->esquerda))
+    
+    if(!TestaArvoreBinariaVazia((*arvore)->esquerda))
     {
-        altura = AlturaDoNo((*arvore)->esquerda, item);
+        altura = AlturaDoNo((*arvore)->esquerda, item); // -1
     }
-    else if(!TestaArvoreBinariaVazia((*arvore)->direita))
+    
+    if(!TestaArvoreBinariaVazia((*arvore)->direita))
     {
         altura = AlturaDoNo((*arvore)->direita, item);
     }
-    
+
     altura = altura - 1;
     printf("\naltura: %d", altura);
     // altura = altura + 2;
