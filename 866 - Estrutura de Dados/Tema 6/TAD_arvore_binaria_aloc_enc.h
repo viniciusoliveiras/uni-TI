@@ -43,6 +43,12 @@ TipoArvore * LiberaArvoreBinaria(TipoArvore **arvore);
 //verifica se um elemento pertence a arvore binaria
 int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item);
 
+
+
+int AlturaDoNo(TipoArvore **arvore, TipoItem item);
+
+
+
 //imprime os elementos da arvore binaria
 void ImprimeArvoreBinaria(TipoArvore **arvore, int l);
 

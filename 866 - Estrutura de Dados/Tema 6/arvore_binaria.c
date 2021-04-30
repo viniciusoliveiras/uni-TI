@@ -47,6 +47,21 @@ int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item)
             PertenceArvoreBinaria((*arvore)->direita, item);
 }
 
+int AlturaDoNo(TipoArvore **arvore, TipoItem item)
+{
+    int grau;
+    
+    if ((*arvore)->item.chave == item.chave)
+        return 1;
+    else
+    {
+        AlturaDoNo((*arvore)->esquerda, item) + 1;
+        AlturaDoNo((*arvore)->direita, item) + 1;
+    }
+
+    return grau;
+}
+
 //imprime os elementos da arvore binaria
 void ImprimeArvoreBinaria(TipoArvore **arvore, int l)
 {

@@ -3,6 +3,8 @@
 #include <locale.h>
 #include "TAD_arvore_binaria_aloc_enc.h"
 
+int height(TipoArvore **arvore);
+
 int main(void)
 {
     setlocale(LC_ALL, "");
@@ -91,32 +93,57 @@ int main(void)
     int s = PertenceArvoreBinaria(arvore_13, e3);
     printf("\n%i", s);
 
-    printf("\nImprimeArvoreBinario arvore13:\n");
-    ImprimeArvoreBinaria(arvore_13, 0);
+    // printf("\nImprimeArvoreBinario arvore13:\n");
+    // ImprimeArvoreBinaria(arvore_13, 0);
 
-    printf("\n\nPreOrdem:\n");
-    PercorreArvoreBinariaPreOrdem(arvore_13);
-    printf("\n\nEmOrdem / Simetrica:\n");
-    PercorreArvoreBinariaOrdemSimetrica(arvore_13);
-    printf("\n\nPosOrdem:\n");
-    PercorreArvoreBinariaPosOrdem(arvore_13);
-    printf("\n");
+    // printf("\n\nPreOrdem:\n");
+    // PercorreArvoreBinariaPreOrdem(arvore_13);
+    // printf("\n\nEmOrdem / Simetrica:\n");
+    // PercorreArvoreBinariaOrdemSimetrica(arvore_13);
+    // printf("\n\nPosOrdem:\n");
+    // PercorreArvoreBinariaPosOrdem(arvore_13);
+    // printf("\n");
 
-    printf("\nBinaria Largura:\n");
-    PercorreArvoreBinariaLargura(arvore_13);
-    printf("\n");
+    // printf("\nBinaria Largura:\n");
+    // PercorreArvoreBinariaLargura(arvore_13);
+    // printf("\n");
 
-    printf("\nBinaria Profundidade:\n");
-    PercorreArvoreBinariaProfundidade(arvore_13);
-    printf("\n");
+    // printf("\nBinaria Profundidade:\n");
+    // PercorreArvoreBinariaProfundidade(arvore_13);
+    // printf("\n");
 
-    *arvore_12 = LiberaArvoreBinaria(arvore_12);
+    // *arvore_12 = LiberaArvoreBinaria(arvore_12);
 
-    printf("\nImprimeArvoreBinario arvore13 pos liberar arvore 13:\n");
-    ImprimeArvoreBinaria(arvore_13, 0);
+    // printf("\nImprimeArvoreBinario arvore13 pos liberar arvore 12:\n");
+    // ImprimeArvoreBinaria(arvore_13, 0);
 
-    int h = CalculaAlturaArvoreBinaria(arvore_13);
-    printf("\nAltura Arvore Binaria 13: %i", h);
+    // int h = CalculaAlturaArvoreBinaria(arvore_13);
+    // printf("\nAltura Arvore Binaria 13: %i", h);
+
+    // printf("\n\nFuncao Internet\n");
+    // height(arvore_13);
+
+    TipoItem noDesejado;
+    char testeNo = 'f';
+    noDesejado.chave = testeNo;
+    printf("Altura do no %c eh: %d", testeNo, AlturaDoNo(arvore_13, noDesejado));
+    
 
     return 0;
+}
+
+int height(TipoArvore **arvore)
+{
+    int u, v;
+
+    if((*arvore) == NULL) return -1;
+
+    u = height((*arvore)->esquerda);
+    v = height((*arvore)->direita);
+
+    printf("u: %d\n", u + 1);
+    printf("v: %d\n\n",v + 1);
+
+    if(u > v) return u + 1;
+    else return v + 1;
 }
