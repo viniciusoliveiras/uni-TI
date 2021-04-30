@@ -1,5 +1,5 @@
  <h1 align="center">Uni TI</h1>
- <p align="center">💾 Repositório para armazenamento e colaboração de atividades dos cursos de TI da Unicarioca</p>
+ <p align="center">💾 Repositório para armazenamento e colaboração de atividades dos cursos de TI da Unicarioca.</p>
  
  <p align="center">
   <img src="https://img.shields.io/github/license/viniciusoliveiras/uni-TI" />
