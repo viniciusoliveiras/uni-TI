@@ -27,7 +27,7 @@ Abaixos estão os cursos que os diferentes membros do grupo cursam:
     <td align="center"><a href="https://github.com/viniciusoliveiras"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/64497059?v=4" width="100px;" alt=""/><br /><sub><b>Vinícius Oliveira</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/mateus-azevedo"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62727807?v=4" width="100px;" alt=""/><br /><sub><b>Mateus Santos</b></sub></a><br /></td>
 	  <td align="center"><a href="https://github.com/Rhuan-Gonzaga"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62728188?v=4" width="100px;" alt=""/><br /><sub><b>Rhuan Gonzaga</b></sub></a><br /></td>
-	  
+	  <td align="center"><a href="https://rythm.fm/"><img style="border-radius: 50%;" src="https://rythm.fm/rythm.png" width="100px;" alt=""/><br /><sub><b>Rythm Bot</b></sub></a><br /></td>	    
  </tr>
 </table>
 
