@@ -47,23 +47,30 @@ int AlturaDoNo(TipoArvore **arvore, TipoItem item)
 
     if ((*arvore)->item.chave == item.chave)
     {
-
         return 3;
     }
 
     if (!TestaArvoreBinariaVazia((*arvore)->esquerda))
     {
         altura = AlturaDoNo((*arvore)->esquerda, item); // -1
+        if (altura == 3 || altura == 2)
+	    {
+		    altura = altura - 1;
+	
+	    	return altura;	
+		}
     }
 
     if (!TestaArvoreBinariaVazia((*arvore)->direita))
     {
         altura = AlturaDoNo((*arvore)->direita, item);
+        if (altura == 3 || altura == 2)
+    	{
+	    	altura = altura - 1;
+
+    		return altura;	
+		}
     }
-
-    altura = altura - 1;
-
-    return altura;
 }
 
 //imprime os elementos da arvore binaria

@@ -76,7 +76,7 @@ int main(void)
     printf("Insira uma letra de A ate F para calcular a altura: ");
     scanf("%c", &testeNo);
     
-    testeNo = tolower(testeNo); // qualquer caractere sera minusculo
+    testeNo = tolower(testeNo); // qualquer caractere sera minusculo    
     noDesejado.chave = testeNo; // adiciona valor digitado ao TipoItem
     
     printf("\n\nAltura do no %c eh: %d", testeNo, AlturaDoNo(arvore_13, noDesejado));
