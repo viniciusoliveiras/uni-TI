@@ -2,20 +2,16 @@
 #include <stdlib.h>
 #include "TAD_arvore_binaria_aloc_enc.h"
 
-//TAD arvore binaria com alocacao encadeada
-//cria uma arvore binaria vazia
 void CriaArvoreBinariaVazia(TipoArvore **arvore)
 {
     *arvore = NULL;
 }
 
-//testa se a arvore binaria e vazia
 int TestaArvoreBinariaVazia(TipoArvore **arvore)
 {
     return (*arvore == NULL);
 }
 
-//cria uma arvore binaria
 void CriaArvoreBinaria(TipoItem item, TipoArvore **arvore, TipoArvore **esquerda, TipoArvore **direita)
 {
     *arvore = (TipoArvore *)malloc(sizeof(TipoArvore));
@@ -24,8 +20,7 @@ void CriaArvoreBinaria(TipoItem item, TipoArvore **arvore, TipoArvore **esquerda
     (*arvore)->direita = direita;
 }
 
-//libera a arvore binaria
-TipoArvore * LiberaArvoreBinaria(TipoArvore **arvore)
+TipoArvore *LiberaArvoreBinaria(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
     {
@@ -36,40 +31,38 @@ TipoArvore * LiberaArvoreBinaria(TipoArvore **arvore)
     return NULL;
 }
 
-//verifica se um elemento pertence a arvore binaria
 int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item)
 {
     if (TestaArvoreBinariaVazia(arvore))
         return 0;
     else
         return (*arvore)->item.chave == item.chave ||
-            PertenceArvoreBinaria((*arvore)->esquerda, item) ||
-            PertenceArvoreBinaria((*arvore)->direita, item);
+               PertenceArvoreBinaria((*arvore)->esquerda, item) ||
+               PertenceArvoreBinaria((*arvore)->direita, item);
 }
 
 int AlturaDoNo(TipoArvore **arvore, TipoItem item)
 {
     int altura = 1;
-    
+
     if ((*arvore)->item.chave == item.chave)
     {
-        printf("\nreturn 3");
+
         return 3;
     }
-    
-    if(!TestaArvoreBinariaVazia((*arvore)->esquerda))
+
+    if (!TestaArvoreBinariaVazia((*arvore)->esquerda))
     {
         altura = AlturaDoNo((*arvore)->esquerda, item); // -1
     }
-    
-    if(!TestaArvoreBinariaVazia((*arvore)->direita))
+
+    if (!TestaArvoreBinariaVazia((*arvore)->direita))
     {
         altura = AlturaDoNo((*arvore)->direita, item);
     }
 
     altura = altura - 1;
-    printf("\naltura: %d", altura);
-    // altura = altura + 2;
+
     return altura;
 }
 
@@ -78,7 +71,7 @@ void ImprimeArvoreBinaria(TipoArvore **arvore, int l)
 {
     int i;
 
-    if(!TestaArvoreBinariaVazia(arvore))
+    if (!TestaArvoreBinariaVazia(arvore))
     {
         ImprimeArvoreBinaria((*arvore)->esquerda, l + 1);
         for (i = 0; i < l; i++)
@@ -93,7 +86,7 @@ void PercorreArvoreBinariaPreOrdem(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
     {
-        printf("%c ", (*arvore)->item.chave);
+
         PercorreArvoreBinariaPreOrdem((*arvore)->esquerda);
         PercorreArvoreBinariaPreOrdem((*arvore)->direita);
     }
@@ -182,4 +175,3 @@ int CalculaAlturaArvoreBinaria(TipoArvore **arvore)
 
     return 1 + max;
 }
-
