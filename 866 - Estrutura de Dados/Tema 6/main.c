@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "TAD_arvore_binaria_aloc_enc.h"
 
@@ -71,10 +72,13 @@ int main(void)
 
     TipoItem noDesejado;
     char testeNo;
+    
     printf("Insira uma letra de A ate F para calcular a altura: ");
     scanf("%c", &testeNo);
-
-    noDesejado.chave = testeNo;
+    
+    testeNo = tolower(testeNo); // qualquer caractere sera minusculo
+    noDesejado.chave = testeNo; // adiciona valor digitado ao TipoItem
+    
     printf("\n\nAltura do no %c eh: %d", testeNo, AlturaDoNo(arvore_13, noDesejado));
 
     return 0;
