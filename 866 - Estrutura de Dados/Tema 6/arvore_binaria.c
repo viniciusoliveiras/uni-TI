@@ -114,46 +114,6 @@ void PercorreArvoreBinariaPosOrdem(TipoArvore **arvore)
     }
 }
 
-//percorre os elementos da arvore binaria em largura
-void PercorreArvoreBinariaLargura(TipoArvore **arvore)
-{
-    TipoArvore **sub_arvore;
-
-    TipoFila *fila = (TipoFila *)malloc(sizeof(TipoFila));
-    CriaFilaVazia(fila);
-    InsereFila(fila, arvore);
-
-    while (!TestaFilaVazia(fila))
-    {
-        RemoveFila(fila, &sub_arvore);
-        printf("%c ", (*sub_arvore)->item.chave);
-        if (!TestaArvoreBinariaVazia((*sub_arvore)->esquerda))
-            InsereFila(fila, (*sub_arvore)->esquerda);
-        if (!TestaArvoreBinariaVazia((*sub_arvore)->direita))
-            InsereFila(fila, (*sub_arvore)->direita);
-    }
-}
-
-//percorre os elementos da arvore binaria em profundidade
-void PercorreArvoreBinariaProfundidade(TipoArvore **arvore)
-{
-    TipoArvore **sub_arvore;
-
-    TipoPilha *pilha = (TipoPilha *)malloc(sizeof(TipoPilha));
-    CriaPilhaVazia(pilha);
-    InserePilha(pilha, arvore);
-
-    while (!TestaPilhaVazia(pilha))
-    {
-        RemovePilha(pilha, &sub_arvore);
-        printf("%c ", (*sub_arvore)->item.chave);
-        if (!TestaArvoreBinariaVazia((*sub_arvore)->direita))
-            InserePilha(pilha, (*sub_arvore)->direita);
-        if (!TestaArvoreBinariaVazia((*sub_arvore)->esquerda))
-            InserePilha(pilha, (*sub_arvore)->esquerda);
-    }
-}
-
 //calcula a altura de um no da arvore binaria
 int CalculaAlturaArvoreBinaria(TipoArvore **arvore)
 {
