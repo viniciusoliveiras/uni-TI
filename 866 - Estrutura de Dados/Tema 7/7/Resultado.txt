@@ -1,0 +1,40 @@
+------------------
+  Árvore Binária
+------------------
+
+1
+1
+0
+1
+1
+0
+0
+1
+1
+0
+0
+1
+1
+0
+0
+1
+1
+0
+0
+1
+         e
+      -
+            d
+         /
+            c
+   *
+      b
++
+   a
+
++ * - e / d c b a
+e d c / - b * a +
+
+Process returned 0 (0x0)   execution time : 0.016 s
+Press any key to continue.
+
