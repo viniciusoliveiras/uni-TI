@@ -31,20 +31,44 @@ int main(void)
     TipoArvore **arvore_18 = (TipoArvore **)malloc(sizeof(TipoArvore *));
     TipoArvore **arvore_19 = (TipoArvore **)malloc(sizeof(TipoArvore *));
 
-    //sub-arvore D
+    // CriaArvoreBinariaVazia(arvore_01);//  +
+    // CriaArvoreBinariaVazia(arvore_02);//  a
+    // CriaArvoreBinariaVazia(arvore_03);//  *
+
+    // CriaArvoreBinariaVazia(arvore_04);//null a
+    // CriaArvoreBinariaVazia(arvore_05);//null a
+
+    // CriaArvoreBinariaVazia(arvore_06);//  b
+    // CriaArvoreBinariaVazia(arvore_07);//  -
+
+    // CriaArvoreBinariaVazia(arvore_08);//null b
+    // CriaArvoreBinariaVazia(arvore_09);//null b
+
+    // CriaArvoreBinariaVazia(arvore_10);// '/'
+    // CriaArvoreBinariaVazia(arvore_11);//  e
+
+    // CriaArvoreBinariaVazia(arvore_12);//  c
+    // CriaArvoreBinariaVazia(arvore_13);//  d
+
+    // CriaArvoreBinariaVazia(arvore_14);//null e
+    // CriaArvoreBinariaVazia(arvore_15);//null e
+
+
+
+    //sub-arvore C
     CriaArvoreBinariaVazia(arvore_01);
     CriaArvoreBinariaVazia(arvore_02);
     CriaArvoreBinariaVazia(arvore_03);
     TipoItem e1;
-    e1.chave = 'd';
+    e1.chave = 'c';
     CriaArvoreBinaria(e1, arvore_03, arvore_01, arvore_02);
 
-    //sub-arvore C
+    //sub-arvore D
     CriaArvoreBinariaVazia(arvore_04);
     CriaArvoreBinariaVazia(arvore_05);
     CriaArvoreBinariaVazia(arvore_06);
     TipoItem e2;
-    e2.chave = 'c';
+    e2.chave = 'd';
     CriaArvoreBinaria(e2, arvore_06, arvore_04, arvore_05);
 
     //sub-arvore /
@@ -65,7 +89,7 @@ int main(void)
     CriaArvoreBinariaVazia(arvore_11);
     TipoItem e5;
     e5.chave = '-';
-    CriaArvoreBinaria(e5, arvore_11, arvore_10, arvore_07);
+    CriaArvoreBinaria(e5, arvore_11, arvore_07, arvore_10);
 
     //sub-arvore B
     CriaArvoreBinariaVazia(arvore_12);
@@ -79,7 +103,7 @@ int main(void)
     CriaArvoreBinariaVazia(arvore_15);
     TipoItem e7;
     e7.chave = '*';
-    CriaArvoreBinaria(e7, arvore_15, arvore_11, arvore_14);
+    CriaArvoreBinaria(e7, arvore_15, arvore_14, arvore_11);
 
     //sub-arvore A
     CriaArvoreBinariaVazia(arvore_16);
@@ -93,7 +117,7 @@ int main(void)
     CriaArvoreBinariaVazia(arvore_19);
     TipoItem e9;
     e9.chave = '+';
-    CriaArvoreBinaria(e9, arvore_19, arvore_15, arvore_18);
+    CriaArvoreBinaria(e9, arvore_19, arvore_18, arvore_15);
 
     printf("\n");
     ImprimeArvoreBinaria(arvore_19, 0);
