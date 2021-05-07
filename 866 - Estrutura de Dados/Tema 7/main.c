@@ -122,6 +122,25 @@ int main(void)
     printf("\n");
     ImprimeArvoreBinaria(arvore_19, 0);
 
+    e9.chave = '+';
+    CriaArvoreBinaria(e9, arvore_19, arvore_18, arvore_15);
+    e8.chave = 'a';
+    CriaArvoreBinaria(e8, arvore_18, arvore_16, arvore_17);
+    e7.chave = '*';
+    CriaArvoreBinaria(e7, arvore_15, arvore_14, arvore_11);
+    e6.chave = 'b';
+    CriaArvoreBinaria(e6, arvore_14, arvore_12, arvore_13);
+    e5.chave = '-';
+    CriaArvoreBinaria(e5, arvore_11, arvore_07, arvore_10);
+    e4.chave = 'e';
+    CriaArvoreBinaria(e4, arvore_10, arvore_08, arvore_09);
+    e3.chave = '/';
+    CriaArvoreBinaria(e3, arvore_07, arvore_03, arvore_06);
+    e2.chave = 'd';
+    CriaArvoreBinaria(e2, arvore_06, arvore_04, arvore_05);
+    e1.chave = 'c';
+    CriaArvoreBinaria(e1, arvore_03, arvore_01, arvore_02);
+
     printf("\nPre Ordem: ");
     PercorreArvoreBinariaPreOrdem(arvore_19);
     printf("\nPos Ordem: ");
