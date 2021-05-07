@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include "TAD_arvore_binaria_aloc_enc.h"
 
-//TAD árvore binária com alocação encadeada
-//cria uma árvore binária vazia
+//TAD ï¿½rvore binï¿½ria com alocaï¿½ï¿½o encadeada
+//cria uma ï¿½rvore binï¿½ria vazia
 void CriaArvoreBinariaVazia(TipoArvore **arvore)
 {
     *arvore = NULL;
 }
 
-//testa se a árvore binária é vazia
+//testa se a ï¿½rvore binï¿½ria ï¿½ vazia
 int TestaArvoreBinariaVazia(TipoArvore **arvore)
 {
     return (*arvore == NULL);
 }
 
-//cria uma árvore binária
+//cria uma ï¿½rvore binï¿½ria
 void CriaArvoreBinaria(TipoItem item, TipoArvore **arvore, TipoArvore **esquerda, TipoArvore **direita)
 {
     *arvore = (TipoArvore *)malloc(sizeof(TipoArvore));
@@ -24,7 +24,7 @@ void CriaArvoreBinaria(TipoItem item, TipoArvore **arvore, TipoArvore **esquerda
     (*arvore)->direita = direita;
 }
 
-//libera a árvore binária
+//libera a ï¿½rvore binï¿½ria
 TipoArvore * LiberaArvoreBinaria(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
@@ -36,7 +36,7 @@ TipoArvore * LiberaArvoreBinaria(TipoArvore **arvore)
     return NULL;
 }
 
-//verifica se um elemento pertence à árvore binária
+//verifica se um elemento pertence ï¿½ ï¿½rvore binï¿½ria
 int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item)
 {
     if (TestaArvoreBinariaVazia(arvore))
@@ -47,22 +47,22 @@ int PertenceArvoreBinaria(TipoArvore **arvore, TipoItem item)
             PertenceArvoreBinaria((*arvore)->direita, item);
 }
 
-//imprime os elementos da árvore binária
-void ImprimeArvoreBinaria(TipoArvore **arvore, int l)
+//imprime os elementos da ï¿½rvore binï¿½ria
+void ImprimeArvoreBinaria(TipoArvore **arvore, int numeroEspaco)
 {
     int i;
 
     if(!TestaArvoreBinariaVazia(arvore))
     {
-        ImprimeArvoreBinaria((*arvore)->esquerda, l + 1);
-        for (i = 0; i < l; i++)
+        ImprimeArvoreBinaria((*arvore)->esquerda, numeroEspaco + 1);
+        for (i = 0; i < numeroEspaco; i++)
             printf("   ");
         printf("%c\n", (*arvore)->item.chave);
-        ImprimeArvoreBinaria((*arvore)->direita, l + 1);
+        ImprimeArvoreBinaria((*arvore)->direita, numeroEspaco + 1);
     }
 }
 
-//percorre os elementos da árvore binária em pré-ordem
+//percorre os elementos da ï¿½rvore binï¿½ria em prï¿½-ordem
 void PercorreArvoreBinariaPreOrdem(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
@@ -73,7 +73,7 @@ void PercorreArvoreBinariaPreOrdem(TipoArvore **arvore)
     }
 }
 
-//percorre os elementos da árvore binária em ordem simétrica
+//percorre os elementos da ï¿½rvore binï¿½ria em ordem simï¿½trica
 void PercorreArvoreBinariaOrdemSimetrica(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
@@ -84,7 +84,7 @@ void PercorreArvoreBinariaOrdemSimetrica(TipoArvore **arvore)
     }
 }
 
-//percorre os elementos da árvore binária em pós-ordem
+//percorre os elementos da ï¿½rvore binï¿½ria em pï¿½s-ordem
 void PercorreArvoreBinariaPosOrdem(TipoArvore **arvore)
 {
     if (!TestaArvoreBinariaVazia(arvore))
@@ -95,7 +95,7 @@ void PercorreArvoreBinariaPosOrdem(TipoArvore **arvore)
     }
 }
 
-//percorre os elementos da árvore binária em largura
+//percorre os elementos da ï¿½rvore binï¿½ria em largura
 void PercorreArvoreBinariaLargura(TipoArvore **arvore)
 {
     TipoArvore **sub_arvore;
@@ -115,7 +115,7 @@ void PercorreArvoreBinariaLargura(TipoArvore **arvore)
     }
 }
 
-//percorre os elementos da árvore binária em profundidade
+//percorre os elementos da ï¿½rvore binï¿½ria em profundidade
 void PercorreArvoreBinariaProfundidade(TipoArvore **arvore)
 {
     TipoArvore **sub_arvore;
@@ -135,7 +135,7 @@ void PercorreArvoreBinariaProfundidade(TipoArvore **arvore)
     }
 }
 
-//calcula a altura de um nó da árvore binária
+//calcula a altura de um nï¿½ da ï¿½rvore binï¿½ria
 int CalculaAlturaArvoreBinaria(TipoArvore **arvore)
 {
     int h1, h2, max;

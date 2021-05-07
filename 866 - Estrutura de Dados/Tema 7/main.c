@@ -98,9 +98,9 @@ int main(void)
     printf("\n");
     ImprimeArvoreBinaria(arvore_19, 0);
 
-    printf("\n");
+    printf("\nPre Ordem: ");
     PercorreArvoreBinariaPreOrdem(arvore_19);
-    printf("\n");
+    printf("\nPos Ordem: ");
     PercorreArvoreBinariaPosOrdem(arvore_19);
     printf("\n");
 
