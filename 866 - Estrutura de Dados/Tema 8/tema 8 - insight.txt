@@ -1,0 +1,14 @@
+Tema 8 - Atividade
+
+arvores binarias dinamicas
+
+- função gera numero aleatórios inteiros de 0 a 23
+- o usuário informar quantos numeros aleatorios serão gerados
+- imprime o numeros aleatorios gerados 
+- árvore binária de busca armazena o instante do último acesso a um arquivo em que cada nó 
+- imprime a arvore binaria
+- insere valor do instante de acesso
+- imprime o instante de acesso
+- percorre a arvore binaria de busca e remove todos os arquivos cujo ultimo instante de acesso seja menor que um determinado instante informado pelo usuario
+- imprime a arvore resultate (uma outra arvore somente com os valores validos)
+
