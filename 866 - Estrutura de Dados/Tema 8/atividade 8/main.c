@@ -17,32 +17,40 @@ int main(void)
     TipoItem item1_1, item1_2, item1_3, item1_4, item1_5, item1_6, item1_7, item1_8, item1_9;
     item1_1.chave = 6;
     item1_1.pacote = 'F';
+    InsereArvoreBinariaBusca(arvore1, item1_1);
+    
     item1_2.chave = 1;
     item1_2.pacote = 'A';
+    InsereArvoreBinariaBusca(arvore1, item1_2);
+    
     item1_3.chave = 8;
     item1_3.pacote = 'H';
+    InsereArvoreBinariaBusca(arvore1, item1_3);
+    
     item1_4.chave = 5;
     item1_4.pacote = 'E';
+    InsereArvoreBinariaBusca(arvore1, item1_4);
+    
     item1_5.chave = 7;
     item1_5.pacote = 'G';
+    InsereArvoreBinariaBusca(arvore1, item1_5);
+    
     item1_6.chave = 9;
     item1_6.pacote = 'I';
+    InsereArvoreBinariaBusca(arvore1, item1_6);
+    
     item1_7.chave = 3;
     item1_7.pacote = 'C';
+    InsereArvoreBinariaBusca(arvore1, item1_7);
+    
     item1_8.chave = 2;
     item1_8.pacote = 'B';
+    InsereArvoreBinariaBusca(arvore1, item1_8);
+    
     item1_9.chave = 4;
     item1_9.pacote = 'D';
-
-    InsereArvoreBinariaBusca(arvore1, item1_1);
-    InsereArvoreBinariaBusca(arvore1, item1_2);
-    InsereArvoreBinariaBusca(arvore1, item1_3);
-    InsereArvoreBinariaBusca(arvore1, item1_4);
-    InsereArvoreBinariaBusca(arvore1, item1_5);
-    InsereArvoreBinariaBusca(arvore1, item1_6);
-    InsereArvoreBinariaBusca(arvore1, item1_7);
-    InsereArvoreBinariaBusca(arvore1, item1_8);
     InsereArvoreBinariaBusca(arvore1, item1_9);
+
 
     printf("\nImpressao da arvore apos a inclusao dos nos\n\n");
     ImprimeArvoreBinariaBusca(arvore1, 0);
