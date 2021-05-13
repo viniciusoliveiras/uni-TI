@@ -4,13 +4,13 @@
 
 void Antecessor1(TipoCelula **arvore1, TipoCelula *arvore2);
 
-//cria uma árvore binária de busca vazia
+//cria uma arvore binaria de busca vazia
 void CriaArvoreBinariaBuscaVazia(TipoCelula **arvore)
 {
     *arvore = NULL;
 }
 
-//testa se a árvore binária de busca é vazia
+//testa se a arvore binaria de busca eh vazia
 int TestaArvoreBinariaBuscaVazia(TipoCelula **arvore)
 {
     return (*arvore == NULL);
@@ -28,7 +28,7 @@ TipoItem * BuscaArvoreBinariaBusca(TipoCelula **arvore, int chave)
         return &(*arvore)->item;
 }
 
-//insere um elemento do tipo TipoItem na árvore binária de busca
+//insere um elemento do tipo TipoItem na arvore binaria de busca
 void InsereArvoreBinariaBusca(TipoCelula **arvore, TipoItem item)
 {
     if (TestaArvoreBinariaBuscaVazia(arvore))
@@ -45,7 +45,7 @@ void InsereArvoreBinariaBusca(TipoCelula **arvore, TipoItem item)
         printf("Erro: item existente\n");
 }
 
-//remove um elemento do tipo TipoItem da árvore binária de busca
+//remove um elemento do tipo TipoItem da arvore binaria de busca
 void RemoveArvoreBinariaBusca(TipoCelula **arvore, TipoItem item)
 {
     TipoCelula *aux;
@@ -85,7 +85,7 @@ void Antecessor1(TipoCelula **arvore1, TipoCelula *arvore2)
     }
 }
 
-//imprime os elementos da árvore binária de busca
+//imprime os elementos da arvore binaria de busca
 void ImprimeArvoreBinariaBusca(TipoCelula **arvore, int l)
 {
     int i;

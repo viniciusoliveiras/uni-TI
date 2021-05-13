@@ -1,21 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include "TAD_arvore_binaria_busca.h"
 
 int main(void)
 {
-    setlocale(LC_ALL, "");
-
     printf("---------------------------\n");
-    printf("  Árvore Binária de Busca\n");
+    printf("  Arvore Binaria de Busca\n");
     printf("---------------------------\n");
 
     TipoCelula **arvore1 = (TipoCelula **)malloc(sizeof(TipoCelula *));
 
-    printf("\nCriação da árvore vazia\n");
+    printf("\nCriacao da Arvore vazia\n");
     CriaArvoreBinariaBuscaVazia(arvore1);
-    printf("\nVerificação se a árvore criada é vazia -> %i\n", TestaArvoreBinariaBuscaVazia(arvore1));
+    printf("\nVerificacao se a arvore criada eh vazia -> %i\n", TestaArvoreBinariaBuscaVazia(arvore1));
 
     TipoItem item1_1, item1_2, item1_3, item1_4, item1_5, item1_6, item1_7, item1_8, item1_9;
     item1_1.chave = 6;
@@ -47,39 +44,39 @@ int main(void)
     InsereArvoreBinariaBusca(arvore1, item1_8);
     InsereArvoreBinariaBusca(arvore1, item1_9);
 
-    printf("\nImpressão da árvore após a inclusão dos nós\n\n");
+    printf("\nImpressao da arvore apos a inclusao dos nos\n\n");
     ImprimeArvoreBinariaBusca(arvore1, 0);
 
     int chave1_1 = 7;
     TipoItem *item1_10 = NULL;
     item1_10 = BuscaArvoreBinariaBusca(arvore1, chave1_1);
-    printf("\nBusca por um nó existente na árvore (chave 7) -> %i\n", item1_10->chave);
+    printf("\nBusca por um no existente na arvore (chave 7) -> %i\n", item1_10->chave);
 
-    printf("\nRemoção de um nó da árvore (chave 1)\n\n");
+    printf("\nRemocao de um no da arvore (chave 1)\n\n");
     RemoveArvoreBinariaBusca(arvore1, item1_2);
     ImprimeArvoreBinariaBusca(arvore1, 0);
 
-    printf("\nRemoção de um nó da árvore (chave 9)\n\n");
+    printf("\nRemocao de um no da arvore (chave 9)\n\n");
     RemoveArvoreBinariaBusca(arvore1, item1_6);
     ImprimeArvoreBinariaBusca(arvore1, 0);
 
-    printf("\nRemoção de um nó da árvore (chave 8)\n\n");
+    printf("\nRemocao de um no da arvore (chave 8)\n\n");
     RemoveArvoreBinariaBusca(arvore1, item1_3);
     ImprimeArvoreBinariaBusca(arvore1, 0);
 
-    printf("\nRemoção de um nó da árvore (chave 6)\n\n");
+    printf("\nRemocao de um no da arvore (chave 6)\n\n");
     RemoveArvoreBinariaBusca(arvore1, item1_1);
     ImprimeArvoreBinariaBusca(arvore1, 0);
 
     int chave1_2 = 9;
     TipoItem *item11 = NULL;
-    printf("\nBusca por um nó inexistente na árvore (chave 9)\n");
+    printf("\nBusca por um no inexistente na arvore (chave 9)\n");
     item11 = BuscaArvoreBinariaBusca(arvore1, chave1_2);
 
-    printf("\nInserção de um nó existente na árvore (chave 3)\n");
+    printf("\nInsercao de um no existente na arvore (chave 3)\n");
     InsereArvoreBinariaBusca(arvore1, item1_7);
 
-    printf("\nRemoção de um nó inexistente na árvore (chave 8)\n");
+    printf("\nRemocao de um no inexistente na arvore (chave 8)\n");
     RemoveArvoreBinariaBusca(arvore1, item1_3);
 
     return 0;
