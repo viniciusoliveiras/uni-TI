@@ -11,6 +11,6 @@
 *.win
 
 # Arquivos de documentos e etc
-# *.docx
+*.docx
 *.zip
 *.rar
