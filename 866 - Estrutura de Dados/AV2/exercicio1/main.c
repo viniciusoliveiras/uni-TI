@@ -3,12 +3,27 @@
 #include <locale.h>
 #include "TAD_arvore_binaria_aloc_enc.h"
 
+void percorre(TipoArvore **arvore)
+{
+    if (!TestaArvoreBinariaVazia((*arvore)->esquerda))
+    {
+        printf("(");
+        percorre((*arvore)->esquerda);
+    }
+    printf("%c ", (*arvore)->item.chave);
+    if (!TestaArvoreBinariaVazia((*arvore)->direita))
+    {
+        printf(")");
+        percorre((*arvore)->direita);
+    }
+}
+
 int main(void)
 {
     setlocale(LC_ALL, "");
 
     printf("------------------\n");
-    printf("  �rvore Bin�ria\n");
+    printf("  Arvore Binaria\n");
     printf("------------------\n");
 
     TipoArvore **arvore_01 = (TipoArvore **)malloc(sizeof(TipoArvore *));
@@ -118,7 +133,7 @@ int main(void)
     e11.chave = '*';
     CriaArvoreBinaria(e11, arvore_23, arvore_15, arvore_22);
 
-    
+    percorre(arvore_23);
 
     // int s = PertenceArvoreBinaria(arvore_13, e3);
     // printf("\n%i", s);
