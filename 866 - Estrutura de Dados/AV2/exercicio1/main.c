@@ -24,7 +24,18 @@ int main(void)
     TipoArvore **arvore_11 = (TipoArvore **)malloc(sizeof(TipoArvore *));
     TipoArvore **arvore_12 = (TipoArvore **)malloc(sizeof(TipoArvore *));
     TipoArvore **arvore_13 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_14 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_15 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_16 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_17 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_18 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_19 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_20 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_21 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_22 = (TipoArvore **)malloc(sizeof(TipoArvore *));
+    TipoArvore **arvore_23 = (TipoArvore **)malloc(sizeof(TipoArvore *));
 
+    //BRACO ESQUERDO DA ARVORE BINARIA
     //sub-arvore A
     CriaArvoreBinariaVazia(arvore_01);
     CriaArvoreBinariaVazia(arvore_02);
@@ -61,9 +72,51 @@ int main(void)
     CriaArvoreBinariaVazia(arvore_13);
     TipoItem e5;
     e5.chave = '+';
-    CriaArvoreBinaria(e5, arvore_13, arvore_3, arvore_6);
+    CriaArvoreBinaria(e5, arvore_13, arvore_03, arvore_06);
 
     //sub-arvore -
+    CriaArvoreBinariaVazia(arvore_14);
+    TipoItem e6;
+    e6.chave = '-';
+    CriaArvoreBinaria(e6, arvore_14, arvore_09, arvore_12);
+
+    //sub-arvore /
+    CriaArvoreBinariaVazia(arvore_15);
+    TipoItem e7;
+    e7.chave = '/';
+    CriaArvoreBinaria(e7, arvore_15, arvore_13, arvore_14);
+
+
+    //BRACO DIREITO DA ARVORE BINARIA
+    //sub-arvore E
+    CriaArvoreBinariaVazia(arvore_16);
+    CriaArvoreBinariaVazia(arvore_17);
+    CriaArvoreBinariaVazia(arvore_18);
+    TipoItem e8;
+    e8.chave = 'e';
+    CriaArvoreBinaria(e8, arvore_18, arvore_16, arvore_17);
+
+    //sub-arvore F
+    CriaArvoreBinariaVazia(arvore_19);
+    CriaArvoreBinariaVazia(arvore_20);
+    CriaArvoreBinariaVazia(arvore_21);
+    TipoItem e9;
+    e9.chave = 'f';
+    CriaArvoreBinaria(e9, arvore_21, arvore_19, arvore_20);
+
+    //sub-arvore +
+    CriaArvoreBinariaVazia(arvore_22);
+    TipoItem e10;
+    e10.chave = '+';
+    CriaArvoreBinaria(e10, arvore_22, arvore_18, arvore_21);
+
+
+    //ARVORE BINARIA RAIZ
+    //arvore *
+    CriaArvoreBinariaVazia(arvore_23);
+    TipoItem e11;
+    e11.chave = '*';
+    CriaArvoreBinaria(e11, arvore_23, arvore_15, arvore_22);
 
     
 
