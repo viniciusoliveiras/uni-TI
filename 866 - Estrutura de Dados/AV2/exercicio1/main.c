@@ -8,7 +8,7 @@ int main(void)
     setlocale(LC_ALL, "");
 
     printf("------------------\n");
-    printf("  Árvore Binária\n");
+    printf("  ï¿½rvore Binï¿½ria\n");
     printf("------------------\n");
 
     TipoArvore **arvore_01 = (TipoArvore **)malloc(sizeof(TipoArvore *));
@@ -25,96 +25,75 @@ int main(void)
     TipoArvore **arvore_12 = (TipoArvore **)malloc(sizeof(TipoArvore *));
     TipoArvore **arvore_13 = (TipoArvore **)malloc(sizeof(TipoArvore *));
 
+    //sub-arvore A
     CriaArvoreBinariaVazia(arvore_01);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_01));
-
     CriaArvoreBinariaVazia(arvore_02);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_02));
-
-    //sub-árvore D
     CriaArvoreBinariaVazia(arvore_03);
     TipoItem e1;
-    e1.chave = 'd';
+    e1.chave = 'a';
     CriaArvoreBinaria(e1, arvore_03, arvore_01, arvore_02);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_03));
 
+    //sub-arvore B
     CriaArvoreBinariaVazia(arvore_04);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_04));
-
     CriaArvoreBinariaVazia(arvore_05);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_05));
-
-    //sub-árvore E
     CriaArvoreBinariaVazia(arvore_06);
     TipoItem e2;
-    e2.chave = 'e';
+    e2.chave = 'b';
     CriaArvoreBinaria(e2, arvore_06, arvore_04, arvore_05);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_06));
 
+    //sub-arvore C
     CriaArvoreBinariaVazia(arvore_07);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_07));
-
     CriaArvoreBinariaVazia(arvore_08);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_08));
-
-    //sub-árvore F
     CriaArvoreBinariaVazia(arvore_09);
     TipoItem e3;
-    e3.chave = 'f';
+    e3.chave = 'c';
     CriaArvoreBinaria(e3, arvore_09, arvore_07, arvore_08);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_09));
 
+    //sub-arvore D
     CriaArvoreBinariaVazia(arvore_10);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_10));
-
-    //sub-árvore B
     CriaArvoreBinariaVazia(arvore_11);
-    TipoItem e4;
-    e4.chave = 'b';
-    CriaArvoreBinaria(e4, arvore_11, arvore_10, arvore_03);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_11));
-
-    //sub-árvore C
     CriaArvoreBinariaVazia(arvore_12);
-    TipoItem e5;
-    e5.chave = 'c';
-    CriaArvoreBinaria(e5, arvore_12, arvore_06, arvore_09);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_12));
+    TipoItem e4;
+    e4.chave = 'd';
+    CriaArvoreBinaria(e4, arvore_12, arvore_10, arvore_11);
 
-    //árvore A
+    //sub-arvore +
     CriaArvoreBinariaVazia(arvore_13);
-    TipoItem e6;
-    e6.chave = 'a';
-    CriaArvoreBinaria(e6, arvore_13, arvore_11, arvore_12);
-    printf("\n%i", TestaArvoreBinariaVazia(arvore_13));
+    TipoItem e5;
+    e5.chave = '+';
+    CriaArvoreBinaria(e5, arvore_13, arvore_3, arvore_6);
 
-    int s = PertenceArvoreBinaria(arvore_13, e3);
-    printf("\n%i", s);
+    //sub-arvore -
 
-    printf("\n");
-    ImprimeArvoreBinaria(arvore_13, 0);
+    
 
-    printf("\n");
-    PercorreArvoreBinariaPreOrdem(arvore_13);
-    printf("\n");
-    PercorreArvoreBinariaOrdemSimetrica(arvore_13);
-    printf("\n");
-    PercorreArvoreBinariaPosOrdem(arvore_13);
-    printf("\n");
+    // int s = PertenceArvoreBinaria(arvore_13, e3);
+    // printf("\n%i", s);
 
-    PercorreArvoreBinariaLargura(arvore_13);
-    printf("\n");
+    // printf("\n");
+    // ImprimeArvoreBinaria(arvore_13, 0);
 
-    PercorreArvoreBinariaProfundidade(arvore_13);
-    printf("\n");
+    // printf("\n");
+    // PercorreArvoreBinariaPreOrdem(arvore_13);
+    // printf("\n");
+    // PercorreArvoreBinariaOrdemSimetrica(arvore_13);
+    // printf("\n");
+    // PercorreArvoreBinariaPosOrdem(arvore_13);
+    // printf("\n");
 
-    *arvore_12 = LiberaArvoreBinaria(arvore_12);
+    // PercorreArvoreBinariaLargura(arvore_13);
+    // printf("\n");
 
-    printf("\n");
-    ImprimeArvoreBinaria(arvore_13, 0);
+    // PercorreArvoreBinariaProfundidade(arvore_13);
+    // printf("\n");
 
-    int h = CalculaAlturaArvoreBinaria(arvore_13);
-    printf("\n%i", h);
+    // *arvore_12 = LiberaArvoreBinaria(arvore_12);
+
+    // printf("\n");
+    // ImprimeArvoreBinaria(arvore_13, 0);
+
+    // int h = CalculaAlturaArvoreBinaria(arvore_13);
+    // printf("\n%i", h);
 
     return 0;
 }
