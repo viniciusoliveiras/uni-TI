@@ -10,11 +10,22 @@ void percorre(TipoArvore **arvore)
         printf("(");
         percorre((*arvore)->esquerda);
     }
-    printf("%c ", (*arvore)->item.chave);
+
+    if(
+        (*arvore)->item.chave == '+' ||
+        (*arvore)->item.chave == '-' ||
+        (*arvore)->item.chave == '/' ||
+        (*arvore)->item.chave == '*' 
+    ) {
+        printf(" %c ", (*arvore)->item.chave);
+    } else {
+        printf("%c", (*arvore)->item.chave);
+    };
+
     if (!TestaArvoreBinariaVazia((*arvore)->direita))
     {
-        printf(")");
         percorre((*arvore)->direita);
+        printf(")");
     }
 }
 
