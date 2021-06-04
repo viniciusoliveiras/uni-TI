@@ -24,22 +24,65 @@ int main(void)
     Package Pacote;
     New_Package Novo_Pct;
     char mensagem[MAX_CARACTER];
-    int tamanho_mensagem, i;
+    int tamanho_mensagem, 
+        numero_repeticao_geral = 0, 
+        i, 
+        j;
 
     printf("Digite a mensagem: ");
-    scanf("%s", &mensagem);
+    scanf("%[^\n]", &mensagem);
+    // IMPRESSAO DA MENSAGEM
     printf("\n\n%s", mensagem);
 
     tamanho_mensagem = strlen(mensagem);
     printf("Numero de Caracteres: %d", tamanho_mensagem);
 
+    // CRIACAO DOS PACOTES
     for (i = 0; i < tamanho_mensagem; i++)
     {
+        const int aleatorio_1_10 = 1 + (rand() % 10);
+
         Pacote[i].id = i;
         Pacote[i].dado = mensagem[i];
-        Pacote[i].numero_repeticao = 1 + (rand() % 9);
+        Pacote[i].numero_repeticao = aleatorio_1_10;
+
+        numero_repeticao_geral += Pacote[i].numero_repeticao;
+    }
+
+    // NOVA SEQUENCIA DE PACOTES
+    for (i = 0; i < numero_repeticao_geral; i++)
+    {
+        const int pct_aleatorio = (rand() % tamanho_mensagem);
+
+        if (Pacote[pct_aleatorio].numero_repeticao != 0)
+        {
+            Novo_Pct[i].id = Pacote[pct_aleatorio].id;
+            Novo_Pct[i].dado = Pacote[pct_aleatorio].dado;
+            Pacote[pct_aleatorio].numero_repeticao -= 1;
+        }
     }
     
+    // IMPRESSAO DA NOVA SEQUENCIA DE PACOTES
+    for (i = 0; i < numero_repeticao_geral; i++)
+    {
+        printf("%d%c ", Novo_Pct[i].id, Novo_Pct[i].dado);
+    }
+
+    printf("\n\n");
+
+    // ARVORE BINARIA DE BUSCA
+    TipoCelula **arvore = (TipoCelula **)malloc(sizeof(TipoCelula *));
+    CriaArvoreBinariaBuscaVazia(arvore);
+    TipoItem pacotes_atualizados;
+
+    for (i = 0; i < numero_repeticao_geral; i++)
+    {
+        pacotes_atualizados.chave = Novo_Pct[i].id;
+        pacotes_atualizados.pacote = Novo_Pct[i].dado;
+        InsereArvoreBinariaBusca(arvore, pacotes_atualizados);
+    }
+
+    ImprimeArvoreBinariaBusca(arvore, 0);
     
     
     // setlocale(LC_ALL, "");
