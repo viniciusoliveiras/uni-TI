@@ -146,33 +146,5 @@ int main(void)
 
     percorre(arvore_23);
 
-    // int s = PertenceArvoreBinaria(arvore_13, e3);
-    // printf("\n%i", s);
-
-    // printf("\n");
-    // ImprimeArvoreBinaria(arvore_13, 0);
-
-    // printf("\n");
-    // PercorreArvoreBinariaPreOrdem(arvore_13);
-    // printf("\n");
-    // PercorreArvoreBinariaOrdemSimetrica(arvore_13);
-    // printf("\n");
-    // PercorreArvoreBinariaPosOrdem(arvore_13);
-    // printf("\n");
-
-    // PercorreArvoreBinariaLargura(arvore_13);
-    // printf("\n");
-
-    // PercorreArvoreBinariaProfundidade(arvore_13);
-    // printf("\n");
-
-    // *arvore_12 = LiberaArvoreBinaria(arvore_12);
-
-    // printf("\n");
-    // ImprimeArvoreBinaria(arvore_13, 0);
-
-    // int h = CalculaAlturaArvoreBinaria(arvore_13);
-    // printf("\n%i", h);
-
     return 0;
 }
