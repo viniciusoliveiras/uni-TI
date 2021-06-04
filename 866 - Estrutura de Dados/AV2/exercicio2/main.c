@@ -26,11 +26,12 @@ int main(void)
     char mensagem[MAX_CARACTER];
     int tamanho_mensagem, 
         numero_repeticao_geral = 0, 
-        i, 
-        j;
+        i = 0;
 
     printf("Digite a mensagem: ");
-    scanf("%[^\n]", &mensagem);
+    fgets(mensagem, MAX_CARACTER, stdin);
+    fflush(stdin);
+
     // IMPRESSAO DA MENSAGEM
     printf("%s\n", mensagem);
 
@@ -53,12 +54,8 @@ int main(void)
     {
         const int pct_aleatorio = (rand() % tamanho_mensagem);
 
-        if (Pacote[pct_aleatorio].numero_repeticao != 0)
-        {
-            Novo_Pct[i].id = Pacote[pct_aleatorio].id;
-            Novo_Pct[i].dado = Pacote[pct_aleatorio].dado;
-            Pacote[pct_aleatorio].numero_repeticao -= 1;
-        }
+        Novo_Pct[i].id = Pacote[pct_aleatorio].id;
+        Novo_Pct[i].dado = Pacote[pct_aleatorio].dado;
     }
     
     printf("\n");
