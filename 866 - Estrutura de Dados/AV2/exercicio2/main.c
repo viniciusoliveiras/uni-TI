@@ -42,10 +42,21 @@ int main(void)
     {
         const int aleatorio_1_10 = 1 + (rand() % 10);
 
-        Pacote[i].id = i;
-        Pacote[i].dado = mensagem[i];
-        Pacote[i].numero_repeticao = aleatorio_1_10;
+        if (mensagem[i] == ' ')
+        {
+            Pacote[i].id = i;
+            Pacote[i].dado = '\_';
+            Pacote[i].numero_repeticao = aleatorio_1_10;
+        } else {
+            Pacote[i].id = i;
+            Pacote[i].dado = mensagem[i];
+            Pacote[i].numero_repeticao = aleatorio_1_10;
+        }
 
+        // printf("Pacote[%i].id: %d\n", i, Pacote[i].id);
+        // printf("Pacote[%i].dado: %c\n", i, Pacote[i].dado);
+        // system("pause");
+        
         numero_repeticao_geral += Pacote[i].numero_repeticao;
     }
 
@@ -63,7 +74,9 @@ int main(void)
     // IMPRESSAO DA NOVA SEQUENCIA DE PACOTES
     for (i = 0; i < numero_repeticao_geral; i++)
     {
-        printf("(%d %c) ", Novo_Pct[i].id, Novo_Pct[i].dado);
+        if (Novo_Pct[i].dado == '\n' || Novo_Pct[i].dado == '\0')
+            continue;
+        printf("(%d, %c) ", Novo_Pct[i].id, Novo_Pct[i].dado);
     }
 
     printf("\n\n");
@@ -78,13 +91,17 @@ int main(void)
     {
         pacotes_atualizados.chave = Novo_Pct[i].id;
         pacotes_atualizados.pacote = Novo_Pct[i].dado;
+        
+        if (pacotes_atualizados.pacote == '\n' || pacotes_atualizados.pacote == '\0')
+            continue;
+
         InsereArvoreBinariaBusca(arvore, pacotes_atualizados);
     }
 
     system("cls");
     printf("Impressao da Arvore:\n\n");
     ImprimeArvoreBinariaBusca(arvore, 0);
-    printf("\n\nImpressao da Mensagem: %s", mensagem);
+    printf("\nImpressao da Mensagem: %s", mensagem);
 
     return 0;
 }
