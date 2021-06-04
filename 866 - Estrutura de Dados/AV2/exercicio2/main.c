@@ -33,7 +33,7 @@ int main(void)
     fflush(stdin);
 
     // IMPRESSAO DA MENSAGEM
-    printf("%s\n", mensagem);
+    printf("\nMensagem impressa: %s", mensagem);
 
     tamanho_mensagem = strlen(mensagem);
 
@@ -52,10 +52,6 @@ int main(void)
             Pacote[i].dado = mensagem[i];
             Pacote[i].numero_repeticao = aleatorio_1_10;
         }
-
-        // printf("Pacote[%i].id: %d\n", i, Pacote[i].id);
-        // printf("Pacote[%i].dado: %c\n", i, Pacote[i].dado);
-        // system("pause");
         
         numero_repeticao_geral += Pacote[i].numero_repeticao;
     }
@@ -69,9 +65,8 @@ int main(void)
         Novo_Pct[i].dado = Pacote[pct_aleatorio].dado;
     }
     
-    printf("\n");
-
     // IMPRESSAO DA NOVA SEQUENCIA DE PACOTES
+    printf("\nNova Sequencia:\n\n");
     for (i = 0; i < numero_repeticao_geral; i++)
     {
         if (Novo_Pct[i].dado == '\n' || Novo_Pct[i].dado == '\0')
