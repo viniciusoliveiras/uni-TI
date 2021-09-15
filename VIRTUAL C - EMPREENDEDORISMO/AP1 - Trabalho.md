@@ -7,23 +7,20 @@ Solicito gentileza na leitura com atenção dos itens abaixo:
 
 - Cuidado com cópias, pois plágio é crime;
 
-- Atenção aos “critérios de correção”, em especial, utilização das normas da ABNT na formatação, citações e referências. Sugestões de links:
+- Atenção aos “critérios de correção”, em especial, utilização das normas da ABNT na formatação, citações e referências. Sugestões de links: [normaseregras](https://www.normaseregras.com/normas-abnt),  [tecmundo](https://www.tecmundo.com.br/tutorial/834-aprenda-a-usar-as-normas-da-abnt-citacao-2-de-4-.htm);
 
-https://www.normaseregras.com/normas-abnt/
-
-https://www.tecmundo.com.br/tutorial/834-aprenda-a-usar-as-normas-da-abnt-citacao-2-de-4-.htm
-
-Foco na formatação dos parágrafos, fontes, margens,  espaçamentos e, em especial, nas citações diretas e indiretas.
+<p align="center">Foco na formatação dos parágrafos, fontes, margens,  espaçamentos e, em especial, nas citações diretas e indiretas.</p>
 
 - O arquivo deverá ser salvo no formato  em “PDF”.  Sugiro gravar o arquivo da seguinte forma:
 
-AV1_AP1_SEUNOME.PDF  
-
-EX.:  AV1_AP1_SIMONEBITTENCOURT.PDF
+<p align="center">
+  AV1_AP1_SEUNOME.PDF <br />
+  EX.:  AV1_AP1_SIMONEBITTENCOURT.PDF
+</p>
 
 - Não será aceito entrega da atividade fora do prazo e nem por outros meios que não seja o ambiente criado para postagem do trabalho - Período de entrega:  Do dia 13/09 até o dia 17/09 - Basta clicar em AP1 - trabalho, imediatamente vai abrir uma opção para anexar o trabalho;
 
-- Não deixe para o finalzinho do “2º tempo”;
+- Não deixe para o finalzinho do “2º tempo”.
 
 <hr />
 
