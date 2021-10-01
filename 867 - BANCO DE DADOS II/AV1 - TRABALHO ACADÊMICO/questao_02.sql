@@ -8,4 +8,5 @@ WHERE
         FROM
             especie
         WHERE
-            descricao = 'Pastor Alemão');
+            descricao = 'Pastor Alemão')
+ORDER BY nome;

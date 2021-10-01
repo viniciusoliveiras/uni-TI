@@ -1,10 +1,9 @@
 SELECT 
-    COUNT(*) AS quantConsultas
+    data, COUNT(*) AS quantConsultas
 FROM
     consulta
-WHERE
-    idConsulta NOT IN (SELECT 
-            idConsulta
-        FROM
-            exame)
-GROUP BY data;
+GROUP BY data
+HAVING idConsulta NOT IN (SELECT 
+        idConsulta
+    FROM
+        exame);
